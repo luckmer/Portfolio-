@@ -6,8 +6,11 @@ export const HeaderStyle = styled.div `
   flex-direction: column;
 `
 export const Span = styled.span `
-  font-size: 10vw;
-  color: #f0f5f9;
+  font-weight: 400;
+  font-size: 13vw;
+  line-height: 11vw;
+  color: #1d1d1d;
+  
 `
 export const Grid = styled.section `
   padding: 10em 11rem 0 11rem;

@@ -4,7 +4,10 @@ export const NavBarContext = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  a{
+    color: black;
+    text-decoration: none;
+  }
   ul{
     margin: 20px 30px 10px 30px;
     list-style-type: none;
