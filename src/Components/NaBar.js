@@ -1,13 +1,15 @@
 import React from "react";
 import {Grid , NavBarContext , Hr} from "../Styles/NavBar.Style";
-
+import {Link} from "react-router-dom";
 
 const NavBar = () =>{
     return(
         <Grid>
             <NavBarContext>
                 <ul>
-                    <li>Piotr Goik </li>
+                    <Link to={"/"}>
+                        <li>Piotr Goik </li>
+                    </Link>
                 </ul>
                 <ul>
                     <li>Portfolio</li>
