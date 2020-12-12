@@ -9,13 +9,15 @@ import { Provider } from "react-redux";
 
 
 ReactDOM.render(
-  <Router>
-    <Provider store={Store}>
-        <Index/>
-        <App />
-    </Provider>
-  </Router>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Router>
+            <Provider store={Store}>
+                <Index/>
+                <App />
+            </Provider>
+        </Router>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 reportWebVitals();
