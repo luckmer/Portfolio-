@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from "./Colors/Colors"
 
 export const HeaderStyle = styled.div `
   display: flex;
@@ -9,7 +10,7 @@ export const Span = styled.span `
   font-weight: 400;
   font-size: 13vw;
   line-height: 11vw;
-  color: #1d1d1d;
+  color: ${colors.darker};
   
 `
 export const Grid = styled.section `

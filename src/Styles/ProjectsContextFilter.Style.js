@@ -1,73 +1,134 @@
 import styled from "styled-components";
-import colors from "./Colors/Colors"
 
-export const LessCode = styled.div `
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+const LessCode = styled.div `
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 `
-
+const ImgProportions = styled.div `
+  margin: auto;
+  width: 70em;
+  height: 40em;
+`
 export const Grid = styled.article `
-  z-index:-1;
-  position: fixed;
-  top: -50px; 
-  left: 0;
-  width: calc(80em);
-  height:calc(110vw);
-  overflow: scroll;
-  transform: rotate(-94deg);
-  transform-origin: center calc(40em);
+  width: 100%;
 `
-
-export const Img = styled.div `
-    border: 1px solid ${colors.dark};
-    width: 400px;
-    height: 600px;
+export const Img = styled.img `
+  width:100%;
+  max-width:100%;
 `
-export const Page1 = styled.div`
-z-index:-1;
-display: flex;
-flex-direction: column;
-justify-content: center;
-margin:auto;
-width: 400px;
-height: 900px;
-transform: rotate(90deg);
-`
-
-export const H = styled.h2 `
-  text-align: left;
-  font-size: 2em;
-  color: ${colors.black};
-  font-family: moret, serif;
-  font-weight: bold;
-  font-style: italic;
-`
-export const ScrollBar = styled.div `
-  margin: 20px;
-  align-items: center;
-`
-export const Div = styled(LessCode) `
-    width: 8em;
-    height: 8em;
-    border: 1px solid ${colors.black};
-    border-radius: 100px;
-    align-items: center;
-`
-export const HeaderContext = styled.div `
+export const HeaderContext = styled(LessCode) `
   display: flex;
-  justify-content: space-around;
-  span{
-    font-size: 2em;
-    color: ${colors.grey};
-    font-family: moret, serif;
-    font-weight: 800;
-    font-style: italic;
-    align-self: center;
-  }
   h3{
-    border: 1px solid ${colors.black};
-    color: ${colors.white};
+    margin: 0 40px 0 0 ;
+    font-weight: bold;
+      font-size: 5em;
+      color: white;
+    }
+`
+export const Panel = styled.div `
+  width: 100%;
+  height: 100%;
+`
+export const ScrollDown = styled(LessCode) `
+  top: 90%;
+`
+export const Div = styled.div `
+  width: 1.5em;
+  height:3em;
+  border-radius: 100px;
+  border: 2px solid white;
+`
+export const Scroll = styled(LessCode) `
+  width: 0.1em;
+  height: 0.5em;
+  background-color: #f6f4f1;
+`
+export const Context = styled.div `
+  padding-bottom: 50vh;
+  padding-top: 20vh;
+
+`
+export const Img2 = styled(ImgProportions) `
+  background-color: black;
+  img{
+    object-fit: cover;
+    display: block;
+    width: 70em;
+    height: 40em;
+  }
+`
+export const ImgX = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  div{
+    margin:1em;
+    width: 34em;
+    height: 50em;
+    background-color: black;
+  }
+  img{
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+`
+export const Header = styled.div `
+  display: flex;
+  padding: 100px 0 120px 0;
+  margin: 0 30vw 0 30vw;
+  word-break: break-all;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  p{
+    color: #999;
+  }
+  span{
+    padding-bottom: 50px;
+    font-size: 24px;
+    line-height: 36px;
+    margin-left: -1px;
+  }
+
+`
+export const Slider = styled.div `
+  background-color: #222222;
+  margin: 5em 0 0 0;
+  width: 100%;
+  height: 50em;
+`
+const LegendLess = styled.legend `
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+`
+export const Prev = styled.legend `
+`
+export const Next= styled.legend `
+`
+
+export const Address = styled.address `
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  button{
+    background-color: #f6f4f1;
+    width: 3em;
+    height: 3em;
+    border: 1px solid black;
+    border-radius: 100px;
+  }
+  p{
+    margin: 3em;
   }
 `
