@@ -2,13 +2,16 @@ import {createSlice}  from "@reduxjs/toolkit";
 import {fetchApi} from "../Api/Api";
 
 const initialState ={
-    fetchApi
+    fetchApi,
+    width: undefined,
+    height: undefined,
 }
 
-const DataSlice = createSlice({
+export const DataSlice = createSlice({
     name:"data",
     initialState,
     reducer:{}
 })
+
 
 export default DataSlice.reducer;
