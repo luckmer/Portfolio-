@@ -1,18 +1,21 @@
-import React from "react";
+import React,{useState} from "react";
 import {
     Grid,HeaderContext,Img,Panel,
     ScrollDown,Context,Div,Scroll,
     Header,Img2,ImgX,Slider,Address,
-    Next,Prev
+    Next,Prev,DisplayContext
 } from "../Styles/ProjectsContextFilter.Style";
 import {useSelector} from "react-redux";
+import { ImageSlide } from "../Export";
 
 const ProjectsContextFilter = (props) =>{
-
-    console.log(props.match.params._id)
-
+    const [count, setCount] = useState(0);
     const data  = useSelector(state => state.data.fetchApi.find((i)=> i._id == props.match.params._id));
     const Images = data.images
+
+    const { handlePrev, MapData, handleNext } = ImageSlide(count, Images, setCount);
+
+
     return  (
         <Grid>
             <Panel>
@@ -57,12 +60,13 @@ const ProjectsContextFilter = (props) =>{
                     <img src={Images[4]} alt={Images[4]}/>
                 </Img2>
                 <Slider>
-                    <Prev>
+                    <Prev onClick = {handlePrev}>
                         <button>Prev</button>
                     </Prev>
-                    <div>
-                    </div>
-                    <Next>
+                    <DisplayContext>
+                        <img src={MapData} alt={MapData}/>
+                    </DisplayContext>
+                    <Next onClick = {handleNext}>
                         <button>Next</button>
                     </Next>
                 </Slider>
@@ -80,3 +84,4 @@ const ProjectsContextFilter = (props) =>{
 }
 
 export default  ProjectsContextFilter;
+
