@@ -38,8 +38,8 @@ const Index = createGlobalStyle`
   }
     html,body{
       font-family: 'Maelstrom Sans',sans-serif;
-    color: black;
-    min-width:100vw;
+      color: black;
+      width:100vw;
       height: 100vh;
       background-color: #f6f4f1;
   }

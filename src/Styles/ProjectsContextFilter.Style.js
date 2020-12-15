@@ -49,7 +49,6 @@ export const Scroll = styled(LessCode) `
 export const Context = styled.div `
   padding-bottom: 50vh;
   padding-top: 20vh;
-
 `
 export const Img2 = styled(ImgProportions) `
   background-color: black;
@@ -94,7 +93,6 @@ export const Header = styled.div `
     line-height: 36px;
     margin-left: -1px;
   }
-
 `
 export const Slider = styled.div `
   background-color: #222222;
@@ -103,15 +101,38 @@ export const Slider = styled.div `
   height: 50em;
 `
 const LegendLess = styled.legend `
+  height: 100%;
+  button{
+    z-index: 99;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    background-color:  #222222;
+    width:4em;
+  }
+  display: flex;
+`
+export const Prev = styled(LegendLess)`
+  float: left;
+`
+export const Next= styled(LegendLess) `
+  float: right;
+`
+export const DisplayContext = styled.div`
+  width: 60em;
+  height: 30em;
+  background-color: white;
   position: absolute;
-  top: 50%;
-  transform: translate(-50%,-50%);
+  left: 50%;
+  transform: translate(-50%,30%);
+  img{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 20%;
+    object-fit: cover;
+  }
 `
-export const Prev = styled.legend `
-`
-export const Next= styled.legend `
-`
-
 export const Address = styled.address `
   width: 100%;
   display: flex;

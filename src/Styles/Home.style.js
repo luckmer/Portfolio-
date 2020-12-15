@@ -7,14 +7,17 @@ export const HeaderStyle = styled.div `
   flex-direction: column;
 `
 export const Span = styled.span `
+ 
   font-weight: 400;
-  font-size: 13vw;
   line-height: 11vw;
+  font-size: 13vw;
   color: ${colors.darker};
-  
 `
 export const Grid = styled.section `
-  padding: 10em 11rem 0 11rem;
+  padding: 10em 11vw 0 11vw;
+  @media (max-width: 980px) {
+    padding: 10em 1vw 0 1vw;
+  }
 `
 export const ContactPanel = styled.div `
   width: 100%;

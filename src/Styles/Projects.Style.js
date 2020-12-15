@@ -4,13 +4,20 @@ import styled from "styled-components";
 export const Grid = styled.div `
   display: flex;
   justify-content: left;
-  height: 2em;
   align-items: center;
+  
+  @media(max-width: 652px){
+    height: 6em;
+    font-size:  5px;
+  }
+  
+
+@media(min-width : 1024px){
+  height:2em;
   font-size: 7vw;
   h1,h2{
     font-size: 7vw;
   }
-  
   a{
     text-decoration:none;
   }
@@ -36,16 +43,31 @@ export const Grid = styled.div `
       transition: transform 1.25s cubic-bezier(.075,.82,.165,1);
     }
   }
-  
-  
 
-  
+}
 `
 export const Text = styled.div `
   overflow: hidden;
   height: 100%;
   width: 100%;
 
+  @media (max-width: 1024px)  {
+    height:9em;
+    justify-content: center;
+    h1,h2{
+      font-size: 6em;
+      position: relative;
+      font-weight: 500;
+      white-space: nowrap;
+      margin: .95rem 0;
+      line-height: 1.2;
+      color: #000 ;
+    }
+    a{
+      font-size: 1em;
+      text-decoration: none;
+    }
+  }
 `
 export const Hr = styled.hr `
   margin: 40px 0 0 0 ;
