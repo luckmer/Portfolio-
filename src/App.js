@@ -6,7 +6,7 @@ function App(){
 
     const location = useLocation();
     return (
-        <section >
+        <section>
             <NavBar/>
             <Switch location={location} key={location.pathname}>
                 {routes.map(({ path, Component}) => (

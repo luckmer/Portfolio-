@@ -5,3 +5,4 @@ export {default as Projects } from "./Components/Projects";
 export {default as AboutMe} from "./Components/AboutMe"
 export {default as ProjectsContextFilter } from "./Pages/ProjectsContextFilter"
 export {default as TotalProjects} from "./Pages/AllProjects";
+export {default as ImageSlide } from "./hooks/ImageSlide";
