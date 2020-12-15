@@ -1,85 +1,17 @@
-import React from "react";
-import styled from "styled-components";
+import React,{useState} from "react";
 import {Link} from "react-router-dom";
-
-
-const Grid = styled.section `
-  padding: 20rem 0 0 0 ;
-`
-const Text = styled.div `
-  font-weight: bold;
-  font-size: 4.5vw;
-  color:#1d1d1d;
-  text-align: left;
-  margin: .75rem 0 1em;
-  line-height: 1.2;font-family: 'Playfair Display', serif;
-  letter-spacing: 7px;
-`
-const AboutText = styled.div`
-  font-weight: bold;
-  font-size: 4vw;
-  color: #1d1d1d;
-  margin-right: 5em;
-  text-align: left;
-  
-`
-
-const Contact = styled.div `
-  padding: 4em 0 15em 0;
-  h1{
-    font-size: 2em;
-    padding:  0 0 20px 0 ;
-  }
-  span{
-    padding: 0 20px 0 20px;
-    font-size: 2em;
-    font-weight: bold;
-  }
-`
-const Back = styled.div `
-  padding: 0 0 4em 0;
-  text-align: center;
-  font-size: 5vw;
-  line-height: 5vw;
-  a{
-    color: black;
-    text-decoration: none;
-  }
-`
-const SocialContact = styled.div `
-  padding: 0 0 5em 0 ;
-  display: flex;
-  div{
-    width: 100%;
-    
-  }
-
-`
-const X = styled.div `
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-const BackToTop = styled(X) `
-  align-items: flex-end;
-  justify-content: flex-end;
-  button{
-    width: 100px;
-    background-color: #1d1d1d;
-    color: white;
-    border-radius:100px;
-    height: 100px;
-  }
-  p{
-    margin-bottom: 2vw;
-    font-family: 'Neue World',sans-serif;
-    font-size: 1vw;
-    line-height: 0.25vw;
-  
-  }
-`
+import {Grid,Text,Contact,Back,SocialContact,BackToTop,AboutText} from "../Styles/AboutMe.Style";
 
 const AboutMe = ()=>{
+
+    const [ scroll , setScroll ] = useState ( false );
+    const handleScrollUp = () => {
+        window.scrollTo ( { top : 0 , behavior : "smooth" } );
+    }
+    window.addEventListener ( "scroll" , () => {
+        window.pageYOffset > 1000 ? setScroll ( true ) : setScroll ( false )
+    } )
+
     return(
         <Grid>
             <Text>
@@ -105,9 +37,9 @@ const AboutMe = ()=>{
                 </div>
             </Back>
             <SocialContact>
-                <BackToTop>
+                <BackToTop className="dsa" style={{ display: scroll ? "block" : "none" }}>
                     <p>TOP</p>
-                    <button>.</button>
+                    <button onClick={handleScrollUp}/>
                 </BackToTop>
             </SocialContact>
         </Grid>
