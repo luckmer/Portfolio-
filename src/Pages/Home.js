@@ -8,10 +8,11 @@ const Home = () =>{
         window.scroll({top:1500,behavior:"smooth"});
     }
     return(
-        <Grid>
+        <Grid  >
             <HeaderStyle >
-                <Span>Simple Guy</Span>
-                <Span> & Creative developer </Span>
+                <Span  >\Simple/Guy/</Span>
+                <Span>&\Creative</Span>
+                <Span>developer/</Span>
                 <Span onClick ={handleScrollDown}> &#x2193;</Span>
             </HeaderStyle>
             <ContactPanel >

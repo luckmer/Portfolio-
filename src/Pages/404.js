@@ -4,7 +4,7 @@ import React from "react";
 const IncorrectPage = ()=>{
 
     return(
-        <div>
+        <div >
             <p>Ups try again </p>
         </div>
     )

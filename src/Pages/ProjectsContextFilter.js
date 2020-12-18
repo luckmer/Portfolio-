@@ -17,7 +17,7 @@ const ProjectsContextFilter = (props) =>{
 
 
     return  (
-        <Grid>
+        <Grid exit ="exit">
             <Panel>
                 <HeaderContext>
                     <h3>Project</h3>

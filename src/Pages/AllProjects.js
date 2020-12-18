@@ -6,7 +6,7 @@ const TotalProjects = () => {
     const dataS = useSelector(state => state.data.fetchApi);
 
     return (
-        <Section >
+        <Section exit ="exit" >
             <Grid>
                 { dataS.map(({_id, name}) => (
                     <Card key={ _id } >
