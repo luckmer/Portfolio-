@@ -1,43 +1,47 @@
 import styled from "styled-components";
-import colors from "./Colors/Colors"
+
 export const NavBarContext = styled.div`
-  z-index: 9999;
   display: flex;
-  width: 100%;
   justify-content: space-between;
-  align-items: center;
-  
-  a{
-    mix-blend-mode: difference;
-    color: ${colors.black};
-    text-decoration: none;
+  padding-bottom: 40px;
+
+  li,a{
+   
+     list-style-type: none;
+      margin: 0 20px 0 10px;
+      display: inline;
+      text-decoration: underline;
+      padding-bottom: 50px;
   }
-  ul{
-    margin:20px 30px 10px 30px;
-    list-style-type: none;
-  }
-  li{
-    
-    font-family: gta,sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.7rem;
-    letter-spacing: 1px;
-    font-weight: 100;
-    padding: 20px 20px 0 20px ;
-  }
+ a{
+   text-decoration: none;
+   text-transform: uppercase;
+   font-weight: 500;
+   line-height: 1px;
+   color: #1d1d1d;
+ }
 `
 export const Hr = styled.div `
-  hr {
-    
-    display: block;
-    height: 1px;
-    border-top: 1px solid ${colors.black};
-  }
+
 `
-export const Grid = styled.section `
-  font-size: 20px;
-  //padding: 0 11rem 0 11rem;
-  line-height: 1.25;
+export const Grid = styled.header `
+  opacity: ${({ animate }) => (animate ? "1" : "0")};
+  transition: opacity .2s ease-out;
+  position: fixed;
   width: 100%;
-  position: absolute;
+  @media screen and (max-width: 651px){
+    padding: 5vh 1vw 0 1vw;
+    li,a{
+      font-size: 3vw ;
+    }
+  }
+  @media screen and (min-width: 651px){
+    padding: 5vh 11vw 0 11vw;
+
+  }
+  hr{
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+  }
 `
