@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import {Link} from "react-router-dom";
-import {Grid,Text,Contact,Back,SocialContact,BackToTop,AboutText} from "../Styles/AboutMe.Style";
+import {Grid,Text,Contact,SocialContact,BackToTop,AboutText} from "../Styles/AboutMe.Style";
 
 const AboutMe = ()=>{
 
@@ -29,17 +29,10 @@ const AboutMe = ()=>{
                 <span>LinkedIn</span>
                 <span>Email</span>
             </Contact>
-            <Back>
-                <div>
-                    <Link to={"/projects"}>
-                        <h1>All Projects</h1>
-                    </Link>
-                </div>
-            </Back>
             <SocialContact>
+                <hr/>
                 <BackToTop className="dsa" style={{ display: scroll ? "block" : "none" }}>
-                    <p>TOP</p>
-                    <button onClick={handleScrollUp}/>
+                    <button onClick={handleScrollUp}>Back to Top</button>
                 </BackToTop>
             </SocialContact>
         </Grid>
