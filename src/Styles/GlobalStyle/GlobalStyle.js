@@ -11,7 +11,6 @@ const Index = createGlobalStyle`
   }
   body{
     font-family: 'Anton', sans-serif;
-
     background-color: #eaeaea;
     min-width:100%;
     min-height: 100vh;

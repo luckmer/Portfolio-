@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Grid = styled.section `
-    padding-top: 15vh;
-
- 
+    
+ @media screen and (min-width: 651px){
+  padding: 15vh 4vw 0 4vw;
+ }
  
  @media screen and(min-width: 651px){
   article{
@@ -34,8 +35,10 @@ export const Grid = styled.section `
  
 @media(min-width : 651px){
  header{
+  overflow: hidden;
   line-height: 1.6em;
   font-size: 6vw;
+  height: 20vh;
   position: absolute;
  }
  span{
@@ -47,7 +50,6 @@ export const Grid = styled.section `
  }
 }
 `
-
 export const ImageDiv = styled.div `
     @media screen and (max-width: 651px){
      img{
@@ -56,10 +58,14 @@ export const ImageDiv = styled.div `
      }
     }
  @media screen and (min-width: 651px){
+  width: 50vw;
+  height: 90vh;
+  float: right;
   img{
+   object-fit: cover;
    background-color: grey;
-   float: right;
-   width: 50vw;
+    width: 100%;
+    height: 100%;
   }
 }
 `
@@ -67,16 +73,22 @@ export const TextControl = styled.div `
  justify-content: space-between;
  display: flex;
  width: 100%;
+ height: 100%;
+ overflow: hidden;
  h1{
+  color: #202020;
   font-weight: bold;
   text-transform: uppercase;
  }
  @media screen and (min-width: 651px){
-  h1{
-  
-   text-align: right;
-   font-size: 5.5vw;
+  height: 30vh;
+  div{
+   text-align: left;
    width: 50vw;
+   height: 100%;
+  }
+  h1{
+   font-size: 5.5vw;
   }
 }
  @media screen and (max-width: 651px){
@@ -89,49 +101,31 @@ export const TextControl = styled.div `
   }
  }
 `
-export const Text = styled.div `
-`
+
 export const Hr = styled.hr `
-   border: 1px solid black;
-   width:100%;
-   display: block;
+ margin-bottom: 50px;
+ height: 1px;
+ background-color: #202020;
+ width:100%;
+ display: block;
  `
 
-
-//  justify-content: left;
-//  height:2em;
-//  font-size: 7vw;
-//  hr{
-//    display: block;
-//    width: 100%;
-//    border: 1px solid black;
-//  }
-//  h1,h2{
-//    font-size: 7vw;
-//  }
-//  a{
-//    text-decoration:none;
-//  }
-//  h1{
-//    color: black;
-//    transform: translateY(0%);
-//    transition: transform 1.25s cubic-bezier(.075,.82,.165,1);
-//  }
-//  h2{
-//    color: #f05454;
-//    transform: translateY(60%);
-//    overflow: hidden;
-//    transition: transform 1.25s cubic-bezier(.075,.82,.165,1);
-//  }
-//  &&:hover {
-//    h2{
-//      z-index: 0;
-//      opacity: 1;
-//      transform: translateY(-100%) translateX(0);
-//    }
-//    h1{
-//      transform: translateY(-110%) rotate3d(180, 0, 0, 5deg) ;
-//      transition: transform 1.25s cubic-bezier(.075,.82,.165,1);
-//    }
-//  }
-//}
+export const Div = styled.div `
+  img{
+    width:${({ animate }) => ( animate === true ? "100%" : "0")};
+    transition: width 0.9s ease-in-out;
+  }
+  hr{
+    overflow: hidden;
+    width:${({ animate }) => ( animate === true ? "100%" : "0")};
+    transition: width 1s ease-in-out;
+  }
+  header{
+    height: ${({ animate }) => ( animate  ? "-20vh" : "0")}  ;
+    transition: height 3.25s cubic-bezier(.075,1,.165,1);
+  }
+  h1{
+    transform: translateY(${({ animate }) => ( animate  ? "0" : "100%")})  ;
+    transition: transform 4.25s cubic-bezier(.075,1,.165,1);
+  }
+`

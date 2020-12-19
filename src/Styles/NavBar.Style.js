@@ -25,7 +25,7 @@ export const Hr = styled.div `
 
 `
 export const Grid = styled.header `
-  opacity: ${({ animate }) => (animate ? "1" : "0")};
+  opacity: ${({ animate }) => ( animate === true ? "1" : "0")};
   transition: opacity .2s ease-out;
   position: fixed;
   width: 100%;

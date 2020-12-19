@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Grid = styled.section `
- @media(min-width: 1024px){
-   padding: 20rem 0 0 0 ;
- }
+  @media screen and (min-width: 651px){
+    padding: 20rem 11vw 0 11vw;
+  }
   @media(max-width:1024px ){
     padding: 10rem 0 0 0 ;
   }

@@ -4,42 +4,48 @@ import { motion } from "framer-motion"
 
 export const HeaderStyle = styled(motion.div) `
   display: flex;
-
+  height: 110vh;
   justify-content: center;
   flex-direction: column;
+
+
   @media screen and  (max-width : 651px){
     span{
       width: 100%;
       font-size: 12.05vw;
-      line-height: 12.05vw;
+      line-height: 11.05vw;
     }
   }
+`
 
+export const HideText = styled.div `
+  overflow: hidden;
 `
 export const Span = styled(motion.span) `
   display: flex;
-
   justify-content: center;
+  width: 100%;
   @media screen and (min-width : 651px){
     font-size: 14vw;
     line-height: 12vw;
   }
   text-transform: uppercase;
   font-weight: bold;
-  line-height: 0.8;
+  line-height: 0.6;
   color: ${colors.darker};
 `
 export const Grid = styled(motion.section) `
   @media screen and (min-width: 651px){
-    padding: 10em 11vw 0 11vw;
+    padding: 15vh 0 0 0;
   }
   @media screen and (max-width: 651px) {
     padding: 5em 1vw 0 1vw;
-    
   }
 `
 export const ContactPanel = styled(motion.div) `
-  padding: 5em 0 0 0;
+  @media screen and (min-width: 651px){
+    padding: 15vh 11vw 0 11vw;
+  }
   display: flex;
   h1{
     font-size: 15px;
