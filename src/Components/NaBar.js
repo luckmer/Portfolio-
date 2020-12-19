@@ -1,16 +1,17 @@
-import React,{useState} from "react";
+import React from "react";
 import {Grid , NavBarContext , Hr} from "../Styles/NavBar.Style";
 import {Link} from "react-router-dom";
-
+import {useSelector , useDispatch} from "react-redux";
+import {setNavView } from "../Reducers/DataControl";
 const NavBar = () =>{
-    const [scroll, setScroll] = useState(false)
-    let prevScroll = window.pageYOffset;
+    const dispatch = useDispatch();
+    const scroll = useSelector(state => state.data.NavBarScroll);
 
     window.addEventListener("scroll", () => {
-        window.pageYOffset < 100 ? setScroll(true) : setScroll("");
+        window.pageYOffset < 100 ?
+            dispatch(setNavView({scroll :true})) :
+            dispatch(setNavView({scroll :false}));
     });
-    console.log(scroll)
-
 
     return(
         <Grid  animate ={scroll} >
