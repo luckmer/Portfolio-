@@ -10,7 +10,7 @@ import { ImageSlide } from "../Export";
 
 const ProjectsContextFilter = (props) =>{
     const [count, setCount] = useState(0);
-    const data  = useSelector(state => state.data.fetchApi.find((i)=> i._id == props.match.params._id));
+    const data  = useSelector(state => state.data.fetchApi.find((i)=> i._id === props.match.params._id));
     const Images = data.images
 
     const { handlePrev, MapData, handleNext } = ImageSlide(count, Images, setCount);
