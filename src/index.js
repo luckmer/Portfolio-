@@ -11,16 +11,17 @@ import Cursor from "./Components/Cursor";
 
 
 ReactDOM.render(
+
     <React.StrictMode>
-        <Router>
-            <Provider store={Store}>
-                <Cursor/>
-                <Index/>
-                <App />
-            </Provider>
-        </Router>
+            <Router>
+                <Provider store={Store}>
+                    <Cursor/>
+                    <Index/>
+                    <App />
+                </Provider>
+            </Router>
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
 
 reportWebVitals();
