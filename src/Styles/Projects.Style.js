@@ -1,11 +1,12 @@
 import styled from "styled-components";
-
-export const Grid = styled.section `
-    
+import{motion} from "framer-motion"
+export const Grid = styled(motion.section) `
  @media screen and (min-width: 651px){
   padding: 15vh 4vw 0 4vw;
+  a{
+   text-decoration: none;
+  }
  }
- 
  @media screen and(min-width: 651px){
   article{
    padding-top: 5vh;
@@ -50,7 +51,16 @@ export const Grid = styled.section `
  }
 }
 `
-export const ImageDiv = styled.div `
+
+export const Span = styled(motion.span)`
+ mix-blend-mode: exclusion;
+ text-transform: uppercase;
+p{
+ font-size: 20px;
+ color: red;
+}
+`
+export const ImageDiv = styled(motion.div) `
     @media screen and (max-width: 651px){
      img{
       padding: 0 30px 0 30px;
@@ -86,7 +96,7 @@ export const TextControl = styled.div `
    text-align: left;
    width: 50vw;
    height: 100%;
-  }
+  } 
   h1{
    font-size: 5.5vw;
   }

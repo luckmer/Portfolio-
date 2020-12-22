@@ -17,17 +17,30 @@ const Index = createGlobalStyle`
     z-index: 2;
   }
   .cursor {
+    mix-blend-mode: exclusion;
     z-index: 99999;
-    width: 40px;
-    height: 40px;
-    border: 1px solid white;
-    background-color:  #eaeaea;
+    width: 60px;
+    height:60px;
+    border: 2px solid white;
     border-radius: 100px;
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
     transition: all 120ms ease;
+  }
+  .dot{
     mix-blend-mode: difference;
+    z-index: 9999;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 100px;
+    background-color: rgb(220, 90, 90);
+    transform: translate(-50%, -50%);
+    transition:all 0.2s ease-in-out;
   }
   .clicked{
     transform: translate(-50%, -50%) scale(0.9);

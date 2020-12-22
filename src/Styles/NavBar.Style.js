@@ -6,7 +6,6 @@ export const NavBarContext = styled.div`
   padding-bottom: 40px;
 
   li,a{
-   
      list-style-type: none;
       margin: 0 20px 0 10px;
       display: inline;
@@ -21,27 +20,34 @@ export const NavBarContext = styled.div`
    color: #1d1d1d;
  }
 `
-export const Hr = styled.div `
 
+export const Hr = styled.div `
+  width: 100%;
+  background-color: #1d1d1d;
+  height: 0.5px;
 `
+
 export const Grid = styled.header `
+  z-index: 2;
   opacity: ${({ animate }) => ( animate === true ? "1" : "0")};
   transition: opacity .2s ease-out;
   position: fixed;
   width: 100%;
+  
   @media screen and (max-width: 651px){
     padding: 5vh 1vw 0 1vw;
     li,a{
       font-size: 3vw ;
     }
   }
+  
   @media screen and (min-width: 651px){
     padding: 5vh 11vw 0 11vw;
-
   }
+  
   hr{
     display: block;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #1d1d1d;
   }
 `

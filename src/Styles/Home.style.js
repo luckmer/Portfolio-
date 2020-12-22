@@ -7,8 +7,6 @@ export const HeaderStyle = styled(motion.div) `
   height: 110vh;
   justify-content: center;
   flex-direction: column;
-
-
   @media screen and  (max-width : 651px){
     span{
       width: 100%;
@@ -52,4 +50,17 @@ export const ContactPanel = styled(motion.div) `
     padding: 5px 0 5px ;
     margin: 0 10px 0 10px ;
   }
+`
+export const LessPanelCode = styled(motion.div) `
+  height:100vh;
+  width: 50vw;
+  position: absolute;
+  z-index: 11;
+`
+export const LeftPanel = styled(LessPanelCode) `
+  background-color: #495464;
+`
+export const RightPanel = styled(LessPanelCode) `
+  right: 0;
+  background-color: #bbbfca;
 `

@@ -48,13 +48,10 @@ export const Contact = styled.div `
 
 export const SocialContact = styled.div `
   padding: 0 0 5em 0 ;
-  
-  div{
-    width: 100%;
-  }
   hr{
     margin: 0  0 30px 0 ;
-    border: 1px solid black;
+    height: 0.5px;
+    background-color: black;
     width:100%;
     display: block;
   }
@@ -68,6 +65,19 @@ export const X = styled.div `
 `
 
 export const BackToTop = styled(X) `
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+
+  li,a{
+    list-style-type: none;
+    margin: 0 20px 0 10px;
+    display: inline;
+    text-decoration: underline;
+    padding-bottom: 50px;
+    color: #1d1d1d;
+  }
+
   button{
     font-size: 1vw;
     text-transform: uppercase;
