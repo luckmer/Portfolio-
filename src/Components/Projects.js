@@ -7,14 +7,10 @@ import {Link } from "react-router-dom"
 
 const Projects = ()=>{
     const dataS = useSelector(state => state.data.fetchApi);
-
-
     const [state, setState] = useState({
         a: false, b: false, c: false, d :false,
     });
-
     const { e, f, g, h } = ScrollHook(setState);
-
 
     //mouse hover code
     let list = useRef()
@@ -48,7 +44,6 @@ const Projects = ()=>{
     };
 
 
-
     const Mapping = dataS.map(({name ,_id,images,Start})=>(
         <Grid
             initial ="initial"
@@ -80,12 +75,11 @@ const Projects = ()=>{
                     initial={{opacity:0}}
                     animate ={{
                         display:hover ? "block" : "none",
-                        opacity:hover ? 1 : 0 ,
                         x: x - pos.left ,
                         y : y - pos.top
                     }}
                 >
-                    Check out
+                    <p>Explore</p>
                 </Span>
             </Link>
         </Grid>

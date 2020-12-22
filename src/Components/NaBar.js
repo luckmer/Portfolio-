@@ -1,8 +1,8 @@
 import React from "react";
 import {Grid , NavBarContext , Hr} from "../Styles/NavBar.Style";
-import {Link} from "react-router-dom";
 import {useSelector , useDispatch} from "react-redux";
 import {setNavView } from "../Reducers/DataControl";
+import {Link} from "react-router-dom";
 const NavBar = () =>{
     const dispatch = useDispatch();
     const scroll = useSelector(state => state.data.NavBarScroll);
@@ -22,9 +22,11 @@ const NavBar = () =>{
                     </Link>
                 </ul>
                 <ul>
-                    <li>
-                        Contact
-                    </li>
+                    <Link to ="/">
+                        <li>
+                            Contact
+                        </li>
+                    </Link>
                     <Link to ="/projects">
                         <li>
                             Cases
@@ -32,9 +34,7 @@ const NavBar = () =>{
                     </Link>
                 </ul>
             </NavBarContext>
-            <Hr>
-                <hr/>
-            </Hr>
+            <Hr/>
         </Grid>
     )
 }

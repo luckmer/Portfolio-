@@ -8,7 +8,7 @@ export const firstName = {
     animate: {
         y: 0,
         transition: {
-            delayChildren: 0.6,
+            delayChildren: 1.3,
             staggerChildren: 0.08,
             staggerDirection: 0.5,
         },
@@ -17,7 +17,7 @@ export const firstName = {
 
 export const letter = {
     initial: {
-        y: -400,
+        y: 400,
     },
     animate: {
         y: 0,

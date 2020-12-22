@@ -26,7 +26,7 @@ import {useEffect , useRef} from "react";
 
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [setState]);
     return { e, f, g, h };
 }
 export default ScrollHook;
