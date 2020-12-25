@@ -8,13 +8,13 @@ const Index = createGlobalStyle`
     border: 0;
     outline: 0;
     box-sizing:border-box;
+    
   }
   body{
     font-family: 'Anton', sans-serif;
     background-color: #eaeaea;
     min-width:100%;
     min-height: 100vh;
-    z-index: 2;
   }
   .cursor {
     mix-blend-mode: exclusion;
@@ -59,6 +59,7 @@ const Index = createGlobalStyle`
   ::-webkit-scrollbar{width:2px;height:2px;}
   ::-webkit-scrollbar-button{width:2px;height:2px;}
 
+  
 `;
 
 export default  Index;

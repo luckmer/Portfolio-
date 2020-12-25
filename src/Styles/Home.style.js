@@ -4,51 +4,56 @@ import { motion } from "framer-motion"
 
 export const HeaderStyle = styled(motion.div) `
   display: flex;
-  height: 110vh;
-  justify-content: center;
+  height: 100%;
   flex-direction: column;
-  @media screen and  (max-width : 651px){
-    span{
-      width: 100%;
-      font-size: 12.05vw;
-      line-height: 11.05vw;
-    }
-  }
 `
 
 export const HideText = styled.div `
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 95vw;
 `
+
 export const Span = styled(motion.span) `
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  @media screen and (min-width : 651px){
-    font-size: 14vw;
-    line-height: 12vw;
-  }
+  font-size: 15vw;
+  line-height: 12vw;
   text-transform: uppercase;
   font-weight: bold;
-  line-height: 0.6;
   color: ${colors.darker};
 `
 export const Grid = styled(motion.section) `
-  @media screen and (min-width: 651px){
-    padding: 15vh 0 0 0;
-  }
-  @media screen and (max-width: 651px) {
-    padding: 5em 1vw 0 1vw;
-  }
+  padding: 22vh 1vw 0 1vw;
 `
+
 export const ContactPanel = styled(motion.div) `
-  @media screen and (min-width: 651px){
-    padding: 15vh 11vw 0 11vw;
-  }
+  padding: 11vh 11vw 0 11vw;
   display: flex;
-  h1{
-    font-size: 15px;
+  justify-content: space-between;
+  h6{
+    color: grey;
+  }
+  h1,h6{
+    font-weight: 400;
+    
     padding: 5px 0 5px ;
-    margin: 0 10px 0 10px ;
+    margin: 0 10px 20px 10px ;
+  }
+  @media screen and (min-width: 651px){
+    h1{
+      font-size: 15px;
+    }
+  }
+  @media screen and (max-width: 651px){
+    h1{
+      font-size: 10px;
+      font-weight: lighter;
+    }
+    
   }
 `
 export const LessPanelCode = styled(motion.div) `
