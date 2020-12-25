@@ -1,47 +1,18 @@
-import React ,{useEffect,useRef,useState} from "react";
+import React ,{useState} from "react";
 import{Grid,TextControl,ImageDiv,Hr,Div,Span} from "../Styles/Projects.Style";
 import ScrollHook from "../hooks/ScrollAnimateHook";
 import {useSelector} from "react-redux";
 import {motion } from "framer-motion"
 import {Link } from "react-router-dom"
+import HoverTextView from "../hooks/HoverTextView";
 
 const Projects = ()=>{
+
     const dataS = useSelector(state => state.data.fetchApi);
-    const [state, setState] = useState({
-        a: false, b: false, c: false, d :false,
-    });
-    const { e, f, g, h } = ScrollHook(setState);
-
-    //mouse hover code
-    let list = useRef()
+    const { e, f, g, h,state } = ScrollHook();
+    const {x,y,pos,list} = HoverTextView()
     const [hover, setHover] = useState(false);
-    const [position, setPosition] = useState({x: 0, y: 0});
-    useEffect(() => {
-        document.addEventListener("mousemove", onMouseMove);
-        return () =>{
-            document.removeEventListener("mousemove", onMouseMove);
-        }
-    }, []);
 
-    const x  = position.x
-    const y  = position.y
-    const [pos ,setPos ] = useState({
-        top:0,left:0
-    })
-    useEffect(()=>{
-        const TopPos = (element) => element.getBoundingClientRect().top;
-        const LeftPos = (element) => element.getBoundingClientRect().left;
-        const Top = TopPos(list.current);
-        const Left = LeftPos(list.current);
-
-        setPos({
-            top: Top,
-            left: Left,
-        });
-    },[])
-    const onMouseMove = (e) => {
-        setPosition({x: e.pageX, y: e.pageY});
-    };
 
 
     const Mapping = dataS.map(({name ,_id,images,Start})=>(
@@ -51,14 +22,11 @@ const Projects = ()=>{
             key ={_id} state ={name} exit ="exit" >
             <Link to ={`${_id}`}>
                 <Hr/>
-                <article
-                    ref ={list}
-                >
+                <article ref ={list}>
                     <header>{Start}</header>
                     <ImageDiv
                         onMouseEnter={()=> setHover(true)}
-                        onMouseLeave={()=> setHover(false)}
-                    >
+                        onMouseLeave={()=> setHover(false)}>
                         <img
                             src={images[1]} alt ={images[1]} />
                     </ImageDiv>
@@ -74,6 +42,7 @@ const Projects = ()=>{
                 <Span
                     initial={{opacity:0}}
                     animate ={{
+                        opacity : hover ? 1 : 0,
                         display:hover ? "block" : "none",
                         x: x - pos.left ,
                         y : y - pos.top

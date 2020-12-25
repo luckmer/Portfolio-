@@ -1,38 +1,38 @@
-import React,{useState} from "react";
-import {Grid,Text,Contact,SocialContact,BackToTop,AboutText} from "../Styles/AboutMe.Style";
+import React from "react";
+import {Grid,SocialContact} from "../Styles/AboutMe.Style";
 
 const AboutMe = ()=>{
 
-    const [ scroll , setScroll ] = useState ( false );
     const handleScrollUp = () => {
         window.scrollTo ( { top : 0 , behavior : "smooth" } );
     }
-    window.addEventListener ( "scroll" , () => {
-        window.pageYOffset > 1000 ? setScroll ( true ) : setScroll ( false )
-    } )
 
     return(
         <Grid>
-            <Text>
-                <h1>About</h1>
-            </Text>
-            <AboutText>
-                <h1>
-                    I'm Piotr born in Poland, I try to learn and discover new things every day,but work is not the only
-                    thing that fills my day I love to delve deeper into space issues.
-                </h1>
-            </AboutText>
-            <Contact>
-                <h1>Contact</h1>
-                <span>Github</span>
-                <span>LinkedIn</span>
-                <span>Email</span>
-            </Contact>
+            <hr/>
             <SocialContact>
-                <hr/>
-                <BackToTop className="dsa" style={{ display: scroll ? "block" : "none" }}>
-                    <button onClick={handleScrollUp}>Back to Top</button>
-                </BackToTop>
+                <ul>
+                    <li>
+                        <button onClick={handleScrollUp}>Back to Top</button>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="https://piotrsebastiangoik@gmail.com" >
+                            MAIL
+                        </a>
+                    </li>
+                    <li>
+                        <a href ="https://www.linkedin.com/in/piotr-goik-9403a01b7/">
+                            LINKEDIN
+                        </a>
+                    </li>
+                    <li >
+                        <a href="https://github.com/luckmer" >
+                            GITHUB
+                        </a>
+                    </li>
+                </ul>
             </SocialContact>
         </Grid>
     )

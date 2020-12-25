@@ -4,6 +4,7 @@ import {useSelector , useDispatch} from "react-redux";
 import {setNavView } from "../Reducers/DataControl";
 import {Link} from "react-router-dom";
 const NavBar = () =>{
+
     const dispatch = useDispatch();
     const scroll = useSelector(state => state.data.NavBarScroll);
 
@@ -22,7 +23,7 @@ const NavBar = () =>{
                     </Link>
                 </ul>
                 <ul>
-                    <Link to ="/">
+                    <Link to ="/Contact">
                         <li>
                             Contact
                         </li>
