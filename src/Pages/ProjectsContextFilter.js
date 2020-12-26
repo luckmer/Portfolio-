@@ -3,22 +3,27 @@ import {
     Grid,HeaderContext,Img,Panel,
     ScrollDown,Context,Div,Scroll,
     Header,Img2,ImgX,Slider,Address,
-    Next,Prev,DisplayContext
+    Next,Prev,DisplayContext,Img3,Img4
 } from "../Styles/ProjectsContextFilter.Style";
 import {useSelector} from "react-redux";
 import { ImageSlide } from "../Export";
+import ScrollHook from "../hooks/ScrollAnimateHook";
 
 const ProjectsContextFilter = (props) =>{
     const [count, setCount] = useState(0);
-    const data  = useSelector(state => state.data.fetchApi.find((i)=> i._id === props.match.params._id));
-    const Images = data.images
+    const data  = useSelector(state => state.data.fetchApi.filter((i )=>i.name === props.match.params._id ));
 
+
+    const Images = data.map(({images})=>images)
     const { handlePrev, MapData, handleNext } = ImageSlide(count, Images, setCount);
-
+    const {e,f,g,h,state} =ScrollHook()
+    const Map1 =  data.map((({images})=>images[2] ));
+    const Map2 =  data.map((({images})=>images[2] ));
+    const Map3 =  data.map((({images})=>images[2] ));
 
     return  (
         <Grid exit ="exit">
-            <Panel>
+            <Panel animate ={state.main}>
                 <HeaderContext>
                     <h3>Project</h3>
                     <h3>Name</h3>
@@ -28,8 +33,9 @@ const ProjectsContextFilter = (props) =>{
                     <Div/>
                 </ScrollDown>
             </Panel>
-            <Img src={Images[2]} alt="Girl in a jacket" >
-            </Img>
+            <div >
+                <Img   animate ={state.main} src={Images} alt={ Images}/>
+            </div>
             <Context>
                 <Header>
                     <span>Behind The Scenes</span>
@@ -38,33 +44,33 @@ const ProjectsContextFilter = (props) =>{
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cill</p>
                 </Header>
-                <Img2>
-                    <img src={Images[1]} alt={Images[1]}/>
+                <Img2 ref ={e} animate ={state.a}>
+                    <img src={Images} alt={Images}/>
                 </Img2>
                 <Header>
-                    <span>Behind The Scenes</span>
+                    <span> -About </span>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cill</p>
                 </Header>
                 <ImgX>
-                    <div>
-                        <img src={Images[4]} alt={Images[2]}/>
-                    </div>
-                    <div>
-                        <img src={Images[3]} alt={Images[3]}/>
-                    </div>
+                    <Img3 ref ={f} animate ={state.b} >
+                        <img src={Images} alt={Images}/>
+                    </Img3>
+                    <Img4 ref ={g} animate ={state.c}>
+                        <img src={Images} alt={Images}/>
+                    </Img4>
                 </ImgX>
-                <Img2>
-                    <img src={Images[4]} alt={Images[4]}/>
+                <Img2 ref ={h} animate ={state.d}>
+                    <img src={Images} alt={Images}/>
                 </Img2>
                 <Slider>
                     <Prev onClick = {handlePrev}>
                         <button>Prev</button>
                     </Prev>
                     <DisplayContext>
-                        <img src={MapData} alt={MapData}/>
+                        <img src={MapData +1 } alt={MapData}/>
                     </DisplayContext>
                     <Next onClick = {handleNext}>
                         <button>Next</button>
