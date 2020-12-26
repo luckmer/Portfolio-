@@ -5,6 +5,8 @@ const initialState ={
     fetchApi,
     ScrollOn:false,
     NavBarScroll:true,
+    navProjectScroll:false,
+    filteredData:[],
     Projects:{
         one:false,
         two:false,
@@ -25,9 +27,17 @@ export const DataSlice = createSlice({
             const {scroll} = action.payload;
             state.NavBarScroll = scroll
         },
+        setProjectView:(state,action)=>{
+            const {scroll} = action.payload;
+            state.navProjectScroll = scroll
+        },
+        setFilteredData : (state,action)=>{
+            const {data} = action.payload
+            state.filteredData = data
+        }
     }
 });
 
 
-export const { setScroll,setNavView } = DataSlice.actions;
+export const { setScroll,setNavView,setProjectView,setFilteredData } = DataSlice.actions;
 export default DataSlice.reducer;
