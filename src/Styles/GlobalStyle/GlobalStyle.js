@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle  } from "styled-components";
 
 
 const Index = createGlobalStyle`
@@ -15,8 +15,12 @@ const Index = createGlobalStyle`
     background-color: #eaeaea;
     min-width:100%;
     min-height: 100vh;
+    
   }
+
+
   .cursor {
+    color: black;
     mix-blend-mode: exclusion;
     z-index: 99999;
     width: 60px;
@@ -28,20 +32,7 @@ const Index = createGlobalStyle`
     pointer-events: none;
     transition: all 120ms ease;
   }
-  .dot{
-    mix-blend-mode: difference;
-    z-index: 9999;
-    width: 10px;
-    height: 10px;
-    pointer-events: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 100px;
-    background-color: rgb(220, 90, 90);
-    transform: translate(-50%, -50%);
-    transition:all 0.2s ease-in-out;
-  }
+
   .clicked{
     transform: translate(-50%, -50%) scale(0.9);
     background-color: #fefefe;

@@ -130,7 +130,8 @@ export const Div = styled.div `
   transition: height 3.25s cubic-bezier(.075,1,.165,1);
  }
  h1{
-  transform: translateY(${({ animate }) => ( animate  ? "0" : "100%")})  ;
-  transition: transform 4.25s cubic-bezier(.075,1,.165,1);
+   
+   transform: translateY(${({ animate }) => ( animate  ? "0" : "100vh")})  ;
+   transition: transform 4.25s cubic-bezier(.075,1,.165,1);
  }
 `

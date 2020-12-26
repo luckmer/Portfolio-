@@ -103,21 +103,23 @@ export const Div = styled.div `
   }
 `
 
-
+export const Space = styled.div `
+ padding-top: 29em;
+`
 export const Grid = styled.article`
  display: flex;
- padding-top: 29em;
  flex-flow: row wrap;
  justify-content: space-around;
  align-items: center;
  height: 100%;
  margin: auto;
-
+ transform: translateY(${({ animate }) => ( animate  === false ? "0" : "10vh")})  ;
+ opacity: ${({ animate }) => ( animate === false ? "-20vh" : "0")}  ;
+ transition: opacity .3s ease ,transform 1.25s cubic-bezier(.75,1,.165,1);
 `
 
 export const Card = styled.div`
  display: flex;
-
  justify-content: center;
  align-items: flex-end;
  margin-bottom: 50px;

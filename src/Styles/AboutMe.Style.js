@@ -20,7 +20,6 @@ export const Grid = styled.section `
   }
 `
 
-
 export const SocialContact = styled.div `
   display: flex;
   height: 15vh;
@@ -39,12 +38,33 @@ export const SocialContact = styled.div `
     display: inline;
     padding-bottom: 50px;
   }
-  a{
-    text-decoration: none;
+
+  a {
+    overflow: hidden;
+    color: grey;
     text-transform: uppercase;
-    font-weight: lighter;
-    line-height: 1px;
-    color: #1d1d1d;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    font-weight: bold;
+    
+    padding: 15px 20px  20px 20px;
+    margin: 20px;
+    position: relative;
+  }
+  a::before {
+    background-color: grey;
+    text-align: center;
+    width: 0;
+    color: white;
+    overflow: hidden;
+    position: absolute;
+    content: attr(data-text);
+    transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+  }
+
+  a:hover:before {
+    width: 100%;
   }
 
 `

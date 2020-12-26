@@ -21,7 +21,7 @@ export const Span = styled(motion.span) `
   justify-content: flex-start;
   width: 100%;
   font-size: 15vw;
-  line-height: 12vw;
+  line-height: 0.750;
   text-transform: uppercase;
   font-weight: bold;
   color: ${colors.darker};
@@ -63,7 +63,7 @@ export const LessPanelCode = styled(motion.div) `
   z-index: 11;
 `
 export const LeftPanel = styled(LessPanelCode) `
-  background-color: #495464;
+  background-color: #bbbfca;
 `
 export const RightPanel = styled(LessPanelCode) `
   right: 0;
