@@ -20,7 +20,7 @@ const Projects = ()=>{
             initial ="initial"
             animate ="animate"
             key ={_id} state ={name} exit ="exit" >
-            <Link to ={`${_id}`}>
+            <Link to={`${_id}`}>
                 <Hr/>
                 <article ref ={list}>
                     <header>{Start}</header>

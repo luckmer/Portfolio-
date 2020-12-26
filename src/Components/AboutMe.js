@@ -12,23 +12,25 @@ const AboutMe = ()=>{
             <hr/>
             <SocialContact>
                 <ul>
-                    <li>
-                        <button onClick={handleScrollUp}>Back to Top</button>
+                    <li onClick={handleScrollUp}>
+                        <a data-text="Back">Back to Top</a>
                     </li>
                 </ul>
                 <ul>
-                    <li>
-                        <a href="https://piotrsebastiangoik@gmail.com" >
+                    <li >
+                        <a href="https://piotrsebastiangoik@gmail.com" data-text="MAIL">
                             MAIL
                         </a>
                     </li>
-                    <li>
-                        <a href ="https://www.linkedin.com/in/piotr-goik-9403a01b7/">
+                    <li >
+                        <a href ="https://www.linkedin.com/in/piotr-goik-9403a01b7/"
+                           data-text="LINKEDIN">
                             LINKEDIN
                         </a>
                     </li>
                     <li >
-                        <a href="https://github.com/luckmer" >
+                        <a href="https://github.com/luckmer"
+                           data-text="GITHUB">
                             GITHUB
                         </a>
                     </li>

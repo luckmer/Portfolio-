@@ -12,7 +12,6 @@ const Cursor = () =>{
     return <div className={cursor} style={ {
         left: position.position.x,
         top:position.position.y}} >
-        <div className="dot" />
     </div>
 }
 export default  Cursor
