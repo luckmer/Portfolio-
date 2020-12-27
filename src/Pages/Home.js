@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React,{useEffect} from "react";
 import {Grid, ContactPanel,HeaderStyle,Span,HideText,LeftPanel,RightPanel} from "../Styles/Home.style";
 import {disableScroll,enableScroll,handleScrollDown} from "../hooks/LockScrollAfterAnimation";
 import {firstName,letter,transition} from "../Animations/Home.animation";

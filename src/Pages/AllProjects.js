@@ -1,74 +1,25 @@
-import React,{useState,useEffect,useRef} from "react";
-import {Section,Grid,Card,Slider,Header,Div,FilterSection,CardImage,Space} from "../Styles/AllProjects.Style";
+import React,{useState,useEffect} from "react";
+import {Section,Grid,Slider,Header,Space} from "../Styles/AllProjects.Style";
+import {FilterMapOptions} from "../Components/FilterMapOptions";
 import SmoothScrollUpDown from "../hooks/SmoothScrollUpDown";
-import {Link} from "react-router-dom"
-import VanillaTilt from "vanilla-tilt";
+import {ParallaxEffect} from "../Components/ParallaxEffect";
 import FilterProjectData from "../hooks/FilterProjectData";
 import {useSelector} from "react-redux";
-
 
 const TotalProjects = () => {
     const scroll = useSelector(state => state.data);
     const [openFilter ,setOpenFilter] = useState(false)
     const[dataFilter, setDataFilter ] = useState("")
-    const {handleScrollUp } = SmoothScrollUpDown();
-    FilterProjectData(dataFilter)
-    const handleClick = () =>{
-        setOpenFilter(!openFilter)
-    }
-    let data =["All","Games","Design"]
-
-
-
-    const Tilt = props => {
-        const { options, ...rest } = props;
-        const tilt = useRef(null);
-        useEffect(() => {
-            VanillaTilt.init(tilt.current, options);
-        }, [options]);
-        return <div ref={tilt} {...rest} />;
-    };
-
-    const options = {
-        scale: 1,
-        speed: 100,
-        max: 5
-    };
-
-    const FilterOptions = (
-        <FilterSection>
-            <Div>
-                <h6>2020 projects have fun </h6>
-                <div>
-                    {data.map((d,i)=>(
-                        <address key ={d} onClick={handleClick}>
-                            <p onClick={()=>setDataFilter(d)}>{d}</p>
-                            <span >{i +1}</span>
-                        </address>
-                    ))}
-                    <p onClick={handleClick}>X</p>
-                </div>
-            </Div>
-        </FilterSection>
-    )
-
-    const Map =scroll.filteredData.map(({_id,name,images}) => (
-        <Card  key={ _id }>
-            <h1>{name}</h1>
-            <Tilt options={options}>
-                <CardImage>
-                    <Link to ={`/${name}`}>
-                        <img src ={images[3]} alt ={images[3]}/>
-                    </Link>
-                </CardImage>
-            </Tilt>
-        </Card>
-    ))
-
     const [ScrollAnimate,setScrollAnimate] =useState({
         one:false,two:false,three:false,four:false
     })
+    const { Tilt, options } = ParallaxEffect();
+    const {handleScrollUp } = SmoothScrollUpDown();
+    FilterProjectData(dataFilter)
+    const { FilterOptions, Map, handleClick } = FilterMapOptions(
+        setOpenFilter, openFilter, setDataFilter, scroll, Tilt, options );
 
+    
     useEffect(()=>{
         const Scroll = () =>{
             const data = () => document.body.getBoundingClientRect().top
@@ -89,6 +40,7 @@ const TotalProjects = () => {
         document.addEventListener("scroll",Scroll)
         return ()=>document.removeEventListener("scroll",Scroll)
     },[])
+
     return (
         <>
             {openFilter ? FilterOptions :" "}
@@ -143,3 +95,4 @@ const TotalProjects = () => {
 }
 
 export default TotalProjects;
+
