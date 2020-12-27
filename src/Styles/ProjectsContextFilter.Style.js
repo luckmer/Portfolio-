@@ -7,9 +7,8 @@ const LessCode = styled.div `
   transform: translate(-50%,-50%);
 `
 const ImgProportions = styled.div `
-  margin: auto;
-  width: 70em;
-  height: 40em;
+width: 100vw;
+  height: 100vh;
 `
 export const Grid = styled.article `
   width: 100%;
@@ -21,12 +20,15 @@ export const Grid = styled.article `
 `
 export const Img = styled.img `
   width:100%;
+  height: 100%;
+  margin: auto;
   opacity:${({ animate }) => ( animate ? "0" : "1")};
-  transition: opacity 0.5s ease;
+  visibility :${({ animate }) => ( animate ? "hidden" : "visible")};
+  transition: opacity 0.5s ease, visibility 0.5s ease;
   position: fixed;
-  height: 100vh;
   object-fit:cover;
 `
+
 export const HeaderContext = styled(LessCode) `
   display: flex;
   z-index: 9;
@@ -49,10 +51,7 @@ export const Panel = styled.div `
 export const ScrollDown = styled(LessCode) `
   top: 90%;
   position: fixed;
-  z-index: 9;
- 
-  width: 5em;
-  height: 5em;
+  z-index: 2;
   border-radius: 100px;
   background: black;
   display: flex;
@@ -60,46 +59,93 @@ export const ScrollDown = styled(LessCode) `
   align-items: center;
 `
 export const Div = styled.div `
-  width: 1.5em;
-  height:3em;
   border-radius: 100px;
   border: 2px solid white;
 `
 export const Scroll = styled(LessCode) `
-  width: 0.1em;
-  height: 0.5em;
   background-color: #f6f4f1;
 `
 export const Context = styled.div `
-  padding-bottom: 50vh;
-  padding-top: 40vh;
+  padding-top: 70vh;
 `
 export const Img2 = styled(ImgProportions) `
-  width: 70em;
-  height: 40em;
+  margin: auto;
+  max-width: 90vw;
   img{
-    object-fit: cover;
+    object-fit: scale-down;
     display: block;
     width: 100%;
-    height: ${ ({ animate }) => (animate === true ? "100%" : "0%") };
-    transition: height 4.25s cubic-bezier(.075, 1, .165, 1);
+  }
+  @media screen and (min-width: 768px){
+    
+    img{
+      height: ${ ({ animate }) => (animate === true ? "100%" : "0%") };
+      transition: height 4.25s cubic-bezier(.075, 1, .165, 1);
+    }
   }
 `
+export const NextProjectStyle = styled.div `
+  width: 60%;
+  height: 60%;
+  cursor: pointer;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: table;
+  position: relative;
+  opacity:${({ animate }) => ( animate <= -4000 ? "1" : "0")};
+  visibility :${({ animate }) => ( animate  <= -4000 ? "visible" : "hidden")};
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  img {
+    width: 100%;
+    object-fit: scale-down;
+    height: 80vh;
+  }
+  h6{
+    margin: 20px;
+    color: grey;
+    font-weight: bold;
+  }
 
+`
 export const ImgX = styled.div`
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
-  div{
-    margin:1em;
-    width: 34em;
-    height: 50em;
+
+  @media screen and (min-width: 768px){
+    div{
+      width: 29em;
+      height: auto;
+    }
+    img{
+      object-fit: scale-down;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   }
-  img{
-    object-fit: cover;
-    display: block;
-    width: 100%;
-    height: 100%;
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    overflow: hidden;
+    width: 90vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    div{
+      padding-bottom: 20px;
+
+    }
+    img{
+      object-fit: cover;
+      background-color: grey;
+      width: auto;
+      height:auto; 
+    }
   }
 `
 export const Header = styled.div `
@@ -122,26 +168,40 @@ export const Header = styled.div `
 `
 export const Slider = styled.div `
   margin: 5em 0 0 0;
+  z-index:999;
   width: 100%;
   height: 50em;
 `
-const LegendLess = styled.legend `
-  height: 100%;
-  
-  button{
-    z-index: 99;
-    cursor: pointer;
-    font-weight: bold;
-    color: black;
-    width:4em;
+
+export const Prev = styled.legend`
+  margin-right:5px;
+  width: 90px;
+  height: 110px;
+  position:relative;
+  float:left;
+  top: 50%;
+  margin-top: 25px;
+  margin-left: 35px;
+  div{
+    margin: 20px;
+      width: 10px;
+      height: 10px;
+      border-radius:100px ;
+      background-color: white;
+    }
+`
+export const Next= styled.legend `
+  margin-right:5px;
+  position:relative;
+  float:right;
+  top: 50%;
+  div{
+    margin: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius:100px ;
+    background-color: white;
   }
-  display: flex;
-`
-export const Prev = styled(LegendLess)`
-  float: left;
-`
-export const Next= styled(LegendLess) `
-  float: right;
 `
 export const DisplayContext = styled.div`
   width: 60em;
@@ -163,19 +223,14 @@ export const Address = styled.address `
   display: flex;
   justify-content: center;
   div{
+    z-index: 2;
     display: flex;
     justify-content: center;
     width: 100%;
-  }
-  button{
-    background-color: #f6f4f1;
-    width: 3em;
-    height: 3em;
-    border: 1px solid black;
-    border-radius: 100px;
-  }
+    padding-bottom: 40px;
+  } 
   p{
-    margin: 3em;
+    margin: 0 3em 0 3em;
   }
 `
 const Less= styled.div `
@@ -187,12 +242,4 @@ export const Img3 = styled(Less)`
       width: ${({ animate }) => ( animate === true ? "100%" : "0%")}  ;
       transition: width 3.25s cubic-bezier(.075,1,.165,1);  
     }
-`
-export const Img4 = styled(Less) `
-  img {
-    height: ${ ({ animate }) => (animate === true ? "100%" : "0%") };
-    transition: height 3.25s cubic-bezier(.075, 1, .165, 1);
-  }
-
-\`
 `

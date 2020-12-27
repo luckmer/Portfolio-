@@ -113,9 +113,13 @@ export const Grid = styled.article`
  align-items: center;
  height: 100%;
  margin: auto;
- transform: translateY(${({ animate }) => ( animate  === false ? "0" : "10vh")})  ;
- opacity: ${({ animate }) => ( animate === false ? "-20vh" : "0")}  ;
- transition: opacity .3s ease ,transform 1.25s cubic-bezier(.75,1,.165,1);
+ @media screen and (min-width: 1401px){
+  transform: translateY(${({ animate }) => ( animate  === false ? "0" : "10vh")})  ;
+  opacity: ${({ animate }) => ( animate === false ? "-20vh" : "0")}  ;
+  transition: opacity .3s ease ,transform 1.25s cubic-bezier(.75,1,.165,1);
+ }
+
+
 `
 
 export const Card = styled.div`
@@ -138,9 +142,7 @@ export const Card = styled.div`
   &:nth-child(3n - 1){
    margin-top: -10em;
   }
-  
  }
-
 `
 
 export const CardImage = styled.div `
