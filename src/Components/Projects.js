@@ -14,13 +14,12 @@ const Projects = ()=>{
     const [hover, setHover] = useState(false);
 
 
-
     const Mapping = dataS.map(({name ,_id,images,Start})=>(
         <Grid
             initial ="initial"
             animate ="animate"
             key ={_id} state ={name} exit ="exit" >
-            <Link to={`${_id}`}>
+            <Link to={`${name}/${_id}`}>
                 <Hr/>
                 <article ref ={list}>
                     <header>{Start}</header>

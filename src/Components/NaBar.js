@@ -3,10 +3,10 @@ import {Grid , NavBarContext , Hr} from "../Styles/NavBar.Style";
 import {useSelector , useDispatch} from "react-redux";
 import {setNavView } from "../Reducers/DataControl";
 import {Link} from "react-router-dom";
-const NavBar = () =>{
 
-    const dispatch = useDispatch();
+const NavBar = () =>{
     const scroll = useSelector(state => state.data.NavBarScroll);
+    const dispatch = useDispatch();
 
     window.addEventListener("scroll", () => {
         window.pageYOffset < 100 ?
