@@ -13,7 +13,7 @@ import {ParallaxEffect} from "../Components/ParallaxEffect";
 const ProjectsContextFilter = (props) =>{
     const [open,setOpen] = useState(false)
     const data  = useSelector(state => state.data.fetchApi.filter((i )=>i.name === props.match.params._id ));
-    const {e,f,g,h,state,ScrollValue} =ScrollHook()
+    const {e,f,g,h,state} =ScrollHook()
     let NextProjectValue = NexProjectData(props);
     const HandleOpenImage = () => setOpen(!open)
     const Images = data[0].images
@@ -58,23 +58,23 @@ const ProjectsContextFilter = (props) =>{
                     </Header>
                     <ImgX>
                         <Img3 ref ={f} animate ={state.b}
-                                onClick = {()=>HandleOpenImage()}
+                              onClick = {()=>HandleOpenImage()}
                         >
                             <img src={Images[4]} alt={Images[4]}/>
                         </Img3>
                         <Img3 ref ={g} animate ={state.c}
-                                onClick = {()=>HandleOpenImage()}
+                              onClick = {()=>HandleOpenImage()}
                         >
                             <img src={Images[4]} alt={Images[4]}/>
                         </Img3>
                     </ImgX>
                     <Img2 ref ={h} animate ={state.d}
-                            onClick = {()=>HandleOpenImage}
+                          onClick = {()=>HandleOpenImage}
                     >
                         <img src={Images[0]} alt={Images[0]}/>
                     </Img2>
                 </Context>
-                <NextProjectStyle animate ={ScrollValue}>
+                <NextProjectStyle  >
                     <h6>Next Project</h6>
                     <Tilt options ={options}>
                         <Link  to={`/${NextProjectValue.name}/${NextProjectValue._id}`}>

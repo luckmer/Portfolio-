@@ -26,12 +26,11 @@ const Panels = () =>{
     )
 }
 
-
-
-
 const Home = () =>{
     const dispatch = useDispatch();
     const select = useSelector(state => state.data.ScrollOn);
+
+
 
     useEffect(() => {
         select === false ? disableScroll() : enableScroll()
@@ -46,7 +45,7 @@ const Home = () =>{
                 animate='animate'
                 exit ="exit"
                 onAnimationComplete={() => dispatch(setScroll({set: true}))}>
-                <HeaderStyle variants={firstName}>
+                <HeaderStyle variants={firstName} >
                     <HideText  >
                         <Span variants={letter}> Simple Guy </Span>
                     </HideText>
