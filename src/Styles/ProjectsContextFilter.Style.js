@@ -8,7 +8,6 @@ const LessCode = styled.div `
 `
 const ImgProportions = styled.div `
 width: 100vw;
-  height: 100vh;
 `
 export const Grid = styled.article `
   width: 100%;
@@ -19,14 +18,13 @@ export const Grid = styled.article `
   user-select: none;
 `
 export const Img = styled.img `
-  width:100%;
-  height: 100%;
-  margin: auto;
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
   opacity:${({ animate }) => ( animate ? "0" : "1")};
   visibility :${({ animate }) => ( animate ? "hidden" : "visible")};
   transition: opacity 0.5s ease, visibility 0.5s ease;
   position: fixed;
-  object-fit:cover;
 `
 
 export const HeaderContext = styled(LessCode) `
@@ -35,12 +33,16 @@ export const HeaderContext = styled(LessCode) `
   mix-blend-mode: difference;
   position: fixed;
   h3{
-    
     margin: 0 40px 0 0 ;
     font-weight: bold;
-      font-size: 5em;
-      color: white;
+    font-size: 5em;
+    color: white;
     }
+  @media screen and (max-width: 768px){
+    h3{
+      font-size: 10vw;
+    }
+  }
 `
 export const Panel = styled.div `
   width: 100%;
@@ -68,25 +70,33 @@ export const Scroll = styled(LessCode) `
 export const Context = styled.div `
   padding-top: 70vh;
 `
-export const Img2 = styled(ImgProportions) `
-  margin: auto;
-  max-width: 90vw;
-  img{
-    object-fit: scale-down;
-    display: block;
-    width: 100%;
+export const Img2 = styled(ImgProportions) ` 
+  @media screen and (max-width: 768px){
+    max-width: 90vw;
+    margin:auto;
+    img{
+      width: 100%;
+    }
   }
   @media screen and (min-width: 768px){
-    
+    margin: auto;
+    max-width: 40vw;
     img{
-      height: ${ ({ animate }) => (animate === true ? "100%" : "0%") };
-      transition: height 4.25s cubic-bezier(.075, 1, .165, 1);
+      object-fit: scale-down;
+      display: block;
+      width: 100%;
+    }
+    overflow: hidden;
+    img{
+      transform:translateY( ${({ animate }) => ( animate === true ? "0" : "-100%")})  ;
+      visibility :${({ animate }) => ( animate  === true ? "visible" : "hidden")};
+      transition: transform 1s ease-in-out, visibility 01s ease;
     }
   }
 `
 export const NextProjectStyle = styled.div `
   width: 60%;
-  height: 60%;
+  height: 30%;
   cursor: pointer;
   text-align: center;
   top: 0;
@@ -96,13 +106,9 @@ export const NextProjectStyle = styled.div `
   margin: auto;
   display: table;
   position: relative;
-  opacity:${({ animate }) => ( animate <= -4000 ? "1" : "0")};
-  visibility :${({ animate }) => ( animate  <= -4000 ? "visible" : "hidden")};
-  transition: opacity 0.5s ease, visibility 0.5s ease;
   img {
     width: 100%;
     object-fit: scale-down;
-    height: 80vh;
   }
   h6{
     margin: 20px;
@@ -112,13 +118,14 @@ export const NextProjectStyle = styled.div `
 
 `
 export const ImgX = styled.div`
+  
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
-
   @media screen and (min-width: 768px){
     div{
+      overflow: hidden;
       width: 29em;
       height: auto;
     }
@@ -132,38 +139,55 @@ export const ImgX = styled.div`
   @media screen and (max-width: 768px){
     flex-direction: column;
     overflow: hidden;
-    width: 90vw;
+    max-width:80vw;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     div{
       padding-bottom: 20px;
-
     }
     img{
       object-fit: cover;
       background-color: grey;
-      width: auto;
-      height:auto; 
+      width: 100%;
+      height: 100%;
     }
   }
 `
 export const Header = styled.div `
   display: flex;
   padding: 100px 0 120px 0;
-  margin: 0 30vw 0 30vw;
   word-break: break-all;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  p{
-    color: #999;
+
+  @media screen and (min-width: 651px){
+    margin: 0 30vw 0 30vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    p{
+      color: #999;
+    }
+    span{
+      padding-bottom: 50px;
+      font-size: 24px;
+      line-height: 36px;
+      margin-left: -1px;
+    }
   }
-  span{
-    padding-bottom: 50px;
-    font-size: 24px;
-    line-height: 36px;
-    margin-left: -1px;
+  @media screen and (max-width: 651px){
+    margin: 0 3vw 0 3vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    p{
+      color: #999;
+    }
+    span{
+      padding-bottom: 50px;
+      font-size: 24px;
+      line-height: 36px;
+      margin-left: -1px;
+    }
   }
 `
 export const Slider = styled.div `
@@ -230,7 +254,7 @@ export const Address = styled.address `
     padding-bottom: 40px;
   } 
   p{
-    margin: 0 3em 0 3em;
+    margin: 0 3vw 0 3vw;
   }
 `
 const Less= styled.div `
@@ -239,7 +263,8 @@ const Less= styled.div `
 `
 export const Img3 = styled(Less)`
     img{
-      width: ${({ animate }) => ( animate === true ? "100%" : "0%")}  ;
-      transition: width 3.25s cubic-bezier(.075,1,.165,1);  
+      transform:translateX( ${({ animate }) => ( animate === true ? "0" : "-100%")})  ;
+      visibility :${({ animate }) => ( animate  === true ? "visible" : "hidden")};
+      transition: transform 0.5s ease, visibility 0.5s ease;
     }
 `

@@ -8,6 +8,7 @@ const Index = createGlobalStyle`
     border: 0;
     outline: 0;
     box-sizing:border-box;
+    cursor: none;
     
   }
   body{
@@ -23,14 +24,13 @@ const Index = createGlobalStyle`
     color: black;
     mix-blend-mode: exclusion;
     z-index: 99999;
-    width: 60px;
-    height:60px;
+    width: 40px;
+    height:40px;
     border: 2px solid white;
     border-radius: 100px;
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    transition: all 120ms ease;
   }
 
   .clicked{

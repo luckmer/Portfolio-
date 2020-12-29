@@ -125,15 +125,15 @@ export const Grid = styled.article`
 export const Card = styled.div`
  display: flex;
  justify-content: center;
- align-items: flex-end;
+ align-items: flex-start;
  margin-bottom: 50px;
  h1 {
-  mix-blend-mode: exclusion;
+  mix-blend-mode: difference;
   z-index: 2;
   position: absolute;
   font-weight: bold;
   font-size: 24px;
-  color: white;
+  color: black;
   padding: 0 0 100px  0;
  }
  
