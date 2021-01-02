@@ -28,6 +28,7 @@ export const Span = styled(motion.span) `
 `
 export const Grid = styled(motion.section) `
   padding: 22vh 1vw 0 1vw;
+  font-family: 'Anton', sans-serif;
 `
 
 export const ContactPanel = styled(motion.div) `

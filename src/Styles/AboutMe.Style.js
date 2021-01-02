@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Grid = styled.section `
+
+  font-family: 'Anton', sans-serif;
   z-index: 2;
   width: 100%;
   @media screen and (max-width: 651px){
