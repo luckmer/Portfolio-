@@ -6,13 +6,14 @@ const  ImageSlide = (count, Images, setCount) =>  {
         setCount(index);
     };
     const handleNext = () => {
-
         const reset = count === Images.length - 1;
         const index = reset ? 0 : count + 1;
+        const next = reset ? 0 : count + 3;
+        console.log(next)
         setCount(index);
     };
 
-    const Mapping = Images.slice(count, count + 1);
+    const Mapping = Images.slice(count , count + 1);
     const MapData = Mapping.length < 1 ? Images : Mapping;
 
     return { handlePrev, MapData, handleNext };
