@@ -8,11 +8,15 @@ const Index = createGlobalStyle`
     border: 0;
     outline: 0;
     box-sizing:border-box;
-    cursor: none;
-    
+    //cursor: none;
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+    }
   }
   body{
-    font-family: 'Anton', sans-serif;
+    //font-family: 'Anton', sans-serif;
     background-color: #eaeaea;
     min-width:100%;
     min-height: 100vh;

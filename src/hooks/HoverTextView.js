@@ -8,22 +8,22 @@ const HoverTextView = () =>{
     let list = useRef()
 
     const x  = position.x
-    const y  = position.y
-    const [pos ,setPos ] = useState({
-        top:0,left:0
-    })
-    useEffect(()=>{
-        const TopPos = (element) => element.getBoundingClientRect().top;
-        const LeftPos = (element) => element.getBoundingClientRect().left;
-        const Top = TopPos(list.current);
-        const Left = LeftPos(list.current);
-        setPos({
-            left: Left,
-            top :Top
-        });
-    },[])
+const y  = position.y
+const [pos ,setPos ] = useState({
+    top:0,left:0
+})
+useEffect(()=>{
+    const TopPos = (element) => element.getBoundingClientRect().top;
+    const LeftPos = (element) => element.getBoundingClientRect().left;
+    const Top = TopPos(list.current);
+    const Left = LeftPos(list.current);
+    setPos({
+        left: Left,
+        top :Top
+    });
+},[])
 
 
-    return {x,y,pos,list}
+return {x,y,pos,list}
 }
 export default  HoverTextView

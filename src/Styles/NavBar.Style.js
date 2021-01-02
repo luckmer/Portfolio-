@@ -35,6 +35,7 @@ export const Hr = styled.div `
 `
 
 export const Grid = styled.header `
+  font-family: 'Anton', sans-serif;
   z-index: 2;
   opacity: ${({ animate }) => ( animate === true ? "1" : "0")};
   transition: opacity .2s ease-out;

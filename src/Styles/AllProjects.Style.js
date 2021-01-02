@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
  export const Header = styled.header `
+  font-family: 'Anton', sans-serif;
   opacity: ${ ({ animate }) => (animate  ? "0" : "100%") };
   display: ${ ({ animate }) => (animate  ? "none" : "block") };
   transition: opacity 1.25s cubic-bezier(.075, 1, .165, 1);
@@ -22,6 +23,7 @@ import styled from "styled-components";
   }
 `
 export const Section = styled.section`
+ font-family: 'Anton', sans-serif;
  transition: all linear 0.2s;
  @media screen and (min-width: 1752px){
   padding: 3em 11em 0 11em;
