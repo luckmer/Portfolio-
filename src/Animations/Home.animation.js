@@ -15,12 +15,36 @@ export const firstName = {
     },
 };
 
+export const firstNameS = {
+    initial: {
+        y: 0,
+    },
+    animate: {
+        y: 0,
+        transition: {
+            delayChildren: 0.4,
+            staggerChildren: 0.08,
+            staggerDirection: 0.5,
+        },
+    },
+};
+
 export const letter = {
     initial: {
         y: 400,
     },
     animate: {
         y: 0,
+        transition: { duration: 1, ...transition },
+    },
+};
+
+export const ButtonLetter = {
+    initial: {
+        x: 400,
+    },
+    animate: {
+        x: 0,
         transition: { duration: 1, ...transition },
     },
 };
