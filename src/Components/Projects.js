@@ -1,6 +1,6 @@
 import React ,{useState} from "react";
 import{Grid,TextControl,ImageDiv,Hr,Div,Span} from "../Styles/Projects.Style";
-import ScrollHook from "../hooks/ScrollAnimateHook";
+import {ScrollHook} from "../hooks/ScrollAnimateHook";
 import {useSelector} from "react-redux";
 import {motion } from "framer-motion"
 import {Link } from "react-router-dom"
@@ -54,11 +54,14 @@ const Projects = ()=>{
     ));
 
     return(
-        <motion.section exit ="exit" >
-            <Div ref={e} animate={state.a} >
+        <motion.section exit ="exit"  >
+            <Div
+                
+                ref={e} animate={state.a} >
                 { Mapping[12]}
             </Div>
-            <Div  ref={f } animate={state.b} >
+            <Div
+                ref={f} animate={state.b} >
                 { Mapping[ 5 ] }
             </Div>
             <Div ref={g} animate={state.c}>

@@ -3,38 +3,45 @@ import {FilterNextPrevProject} from "../hooks/NextProjectData";
 import {Link} from "react-router-dom"
 import {Article,H,Header,Main,ImgPanel,Padding,Footer,FooterData,Card,Text,TextPanel,Number} from "../Styles/MoreProjectsTemplate.Style";
 
-
 const  MoreProjectsTemplate = ({props}) =>  {
 
     const { NextProjectData, PrevProjectData } = FilterNextPrevProject(props);
 
+    const transition = { duration: .6, ease: [.6, 0.01, -0.05, 0.9] };
+
+
+
     return (
-        <Article >
-            <Header >
-                <div><h3>MORE</h3></div>
-                <div><span>PROJECTS</span></div>
+        <Article>
+            <Header>
+                <div>
+                    <h3>MORE</h3>
+                </div>
+                <div>
+                    <span>PROJECTS</span>
+                </div>
             </Header>
-            <section >
-                <Main >
-                    <Link to={`/${NextProjectData.name}/${NextProjectData._id}`}>
-                        <Card >
+            <section>
+                <Main>
+                    <Link
+                        to={`/${NextProjectData.name}/${NextProjectData._id}`} >
+                        <Card transition={transition} whileHover={{ scale: 0.98}} >
                             <Padding>
                                 <div>
-                                    <ImgPanel >
-                                        <img src={NextProjectData.images[0]} alt={NextProjectData.images[0]} />
+                                    <ImgPanel>
+                                        <img
+                                            src={NextProjectData.images[0]}
+                                            alt={NextProjectData.images[0]}
+                                        />
                                     </ImgPanel>
                                 </div>
-                                <TextPanel >
+                                <TextPanel>
                                     <Text>
                                         <div>
-                                            <h3>
-                                                {NextProjectData.name}
-                                            </h3>
+                                            <h3>{NextProjectData.name}</h3>
                                         </div>
                                         <div>
-                                            <h3>
-                                                {NextProjectData.filter}
-                                            </h3>
+                                            <h3>{NextProjectData.filter}</h3>
                                         </div>
                                     </Text>
                                     <Number>{NextProjectData.numb}</Number>
@@ -42,25 +49,25 @@ const  MoreProjectsTemplate = ({props}) =>  {
                             </Padding>
                         </Card>
                     </Link>
-                    <Link to={`/${PrevProjectData.name}/${PrevProjectData._id}`}>
-                        <Card >
+                    <Link
+                        to={`/${PrevProjectData.name}/${PrevProjectData._id}`} >
+                        <Card transition={transition} whileHover={{ scale: 0.98}}  >
                             <Padding>
                                 <div>
-                                    <ImgPanel >
-                                        <img src={PrevProjectData.images[0]} alt={PrevProjectData.images[0]} />
+                                    <ImgPanel>
+                                        <img
+                                            src={PrevProjectData.images[0]}
+                                            alt={PrevProjectData.images[0]}
+                                        />
                                     </ImgPanel>
                                 </div>
                                 <TextPanel>
                                     <Text>
                                         <div>
-                                            <h3>
-                                                {PrevProjectData.name}
-                                            </h3>
+                                            <h3>{PrevProjectData.name}</h3>
                                         </div>
                                         <div>
-                                            <h3>
-                                                {PrevProjectData.filter}
-                                            </h3>
+                                            <h3>{PrevProjectData.filter}</h3>
                                         </div>
                                     </Text>
                                     <Number>{PrevProjectData.numb}</Number>
@@ -96,17 +103,15 @@ const  MoreProjectsTemplate = ({props}) =>  {
                             </ul>
                         </div>
                     </div>
-                    <div>
+                    <span>
                         <span>
-                            <H>
-                                &#x21b3;
-                            </H>
+                            <H>&#x21b3;</H>
                         </span>
-                    </div>
+                    </span>
                 </FooterData>
             </Footer>
         </Article>
-    )
+    );
 }
 
 export default MoreProjectsTemplate
