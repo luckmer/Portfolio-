@@ -1,159 +1,191 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 
-
-export const Grid = styled.article `
-  padding-top:8vh;
-width: 100%;
-  font-family: 'Anton', sans-serif;
-  -webkit-touch-callout: none; 
-  -webkit-user-select: none;
-  -moz-user-select: none; 
-  -ms-user-select: none;
-  user-select: none;
-`
-
-
-
-export const Slider = styled.div `
-  margin: 5em 0 0 0;
-  z-index:999;
-  width: 100%;
-  height: 50em;
-`
-export const Prev = styled.legend`
-  margin-right:5px;
-  width: 90px;
-  height: 110px;
-  position:relative;
-  float:left;
-  top: 50%;
-  margin-top: 25px;
-  margin-left: 35px;
-  div{
-    margin: 20px;
-      width: 10px;
-      height: 10px;
-      border-radius:100px ;
-      background-color: white;
-    }
-`
-export const Next= styled.legend `
-  margin-right:5px;
-  position:relative;
-  float:right;
-  top: 50%;
-  div{
-    margin: 20px;
-    width: 10px;
-    height: 10px;
-    border-radius:100px ;
-    background-color: white;
-  }
-`
-export const DisplayContext = styled.div`
-  width: 60em;
-  height: 30em;
-  background-color: white;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%,30%);
-  img{
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    height: 20%;
-    object-fit: cover;
-  }
-`
-//
-
-export const Main =styled.div `
-display: flex;
-width: 100%;
-a{
-text-decoration: none;
-}
-
-font-family: 'Roboto', sans-serif;
-width: 100vw;
-padding: 8vw 3.5vw 10vw;
-`
-export const Card = styled.div `
-position: relative;
-display: block;
-max-width: 45.8vw;
-margin-right:auto;
-`
-export const Padding = styled.div `
-width: 100%;
-padding: 1vw;
-`
-export const ImgPanel = styled.div ` 
-img{
-    object-fit: cover;
-    margin: auto;
+export const Grid = styled.article`
+    padding-top: 8vh;
     width: 100%;
-    height: 100vh;
-}
-`
-export const DivTest = styled.div`
-    width: 100%;
-`
-export const PaddingOne = styled.div`
-max-width: 30%;
-margin:auto;
-height: 50vh;
-img{
-    object-fit: cover;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-}
-`
-export const PaddingTwo = styled.div`
-width: 100%;
-height: 30vh;
-margin-top:15%;
-img{
-    object-fit: cover;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    
-}
-`
-export const Header = styled.header`
-    font-family: 'Roboto', sans-serif;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+`;
+
+
+export const Main = styled.div`
+
+    font-family: "Roboto", sans-serif;
     width: 100vw;
     padding: 8vw 3.5vw 10vw;
-`
-export const Context = styled.div`
-width:100%;
-height:100%;
-    div{
-        width:100%;
+    @media screen and (min-width: 990px){
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      a {
+          text-decoration: none;
+      }
     }
-`
-export const ImgPanelS = styled.div ` 
-div{
-float:right;
+    @media screen and (max-width: 990px){
+      display:flex;
+      flex-direction:column;
+    }
+`;
+export const Card = styled.div`
+    margin-top:auto;
+    margin-bottom:auto;
+    @media screen and (min-width: 990px){
+      position: relative;
+      display: block;
+      max-width: 45.8vw;
+    }
 
-    display: flex;
-    width: 20vw;
-    height: 50vw;
+`;
+
+
+export const Padding = styled.div`
+    padding: 1vw;
+`;
+export const ImgPanel = styled.div`
+
+    img {
+      object-fit: cover;
+      margin: auto;
+      width: 100%;
+      height: 100vh;
+  }
+`;
+
+export const PaddingTwo = styled(motion.div)`
+    width: 100%;
+    margin:10px;
+    overflow:hidden;
+    img {
+        object-fit: cover;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+    }
+`;
+export const Header = styled(motion.header)`
+    font-family: "Roboto", sans-serif;
+    width: 100vw;
+    padding: 8vw 3.5vw 10vw;
+`;
+export const Context = styled.div`
+    width: 100%;
+    height: 100%;
+    div {
+        width: 100%;
+    }
+`;
+export const ImgPanelS = styled.div`
+  div{
+    background-image: url(${({ Img }) => Img});
     background-position: 50% 50%;
-    background-size: cover;
     background-repeat: no-repeat;
-    width:30vw;
-    margin-right:40px;
-    height: 50vw;
-    background-image: url(${({ Img }) => Img });
-}
-`
+
+  }
+    @media screen and (min-width: 990px){
+      div {
+        float: right;
+        display: flex;
+        background-position: 50% 50%;
+        background-size: auto;
+        background-repeat: no-repeat;
+        width: 30vw;
+        height: 50vw;
+      }
+    }
+
+    @media screen and (max-width: 990px){
+      width: 100%;
+      height:100vh;
+      div {
+        background-size: cover;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+      }
+    }
+`;
 export const CardR = styled.div `
 position: relative;
 display: block;
-width: 45.8vw;
 float:right;
+`
+
+export const TextContext = styled.div`
+    
+    width:100vw;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    div{
+        width:100%;
+    }
+    h1{
+        display: inline-block;
+        padding-bottom: 15vw;
+        font-size: 67vw;
+        line-height: 50vw;
+    }
+
+    @media screen and (max-width: 480px){
+      flex-direction:column;
+      div{
+        display:flex;
+        justify-content:center;
+        margin:auto;
+      }
+      h1{
+        font-size: 130vw;
+        line-height: 99vw;
+      }
+      h2{
+        max-width: 100%;
+        margin-top: 5vw;
+        font-size: 4vw;
+        line-height: 6vw;
+      }
+      h3{
+        margin:auto;
+        font-size: 14vw;
+        line-height: 12vw;
+      }
+    }
+`;
+
+export const Text = styled.section`
+font-family: 'Raleway', sans-serif;
+    margin-left: 5vw;
+    float: left;
+
+`
+
+export const HeaderText = styled.header`
+
+max-width: 90%;
+color: #1d1d1d;
+font-size: 4vw;
+line-height: 3.5vw;
+letter-spacing: -.03em;
+h3{
+    font-weight: bold;
+    font-size: 7vw;
+    line-height: 6vw;
+    color: #1d1d1d;
+}
+
+`
+export const DivText = styled.div`
+max-width: 90%;
+margin-top: 3vw;
+font-size: 1.4vw;
+line-height: 2.2vw;
+h2{
+    font-weight: lighter;
+    
+}
 `

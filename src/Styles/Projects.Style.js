@@ -45,12 +45,12 @@ export const Grid = styled(motion.section) `
  }
 `
 export const Span = styled(motion.span)`
- mix-blend-mode: exclusion;
- text-transform: uppercase;
- p{
-  font-size: 20px;
-  color: red;
- }
+  mix-blend-mode: exclusion;
+  text-transform: uppercase;
+  p{
+    font-size: 20px;
+    color: red;
+  }
 `
 export const ImageDiv = styled(motion.div) `
  @media screen and (max-width: 651px){

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 export const NavBarContext = styled.div`
   display: flex;
   justify-content: space-between;
@@ -11,18 +13,18 @@ export const NavBarContext = styled.div`
   }
 
   li,a{
-     list-style-type: none;
+      list-style-type: none;
       margin: 0 20px 0 10px;
       display: inline;
       padding-bottom: 50px;
   }
- a{
-   text-decoration: none;
-   text-transform: uppercase;
-   font-weight: lighter;
-   line-height: 1px;
-   color: #1d1d1d;
- }
+  a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: lighter;
+    line-height: 1px;
+    color: #1d1d1d;
+  }
 `
 
 export const Hr = styled.div `

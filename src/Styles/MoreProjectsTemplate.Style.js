@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Header = styled.div `
   position: relative;
@@ -32,20 +33,21 @@ export const Article = styled.article `
   width: 100vw;
   padding: 8vw 3.5vw 10vw;
 `
-export const Card = styled.div `
-  position: relative;
-  display: block;
-  width: 45.8vw;
-  margin-right: 1.5vw;
-  background-color: #1d1d1d;
-`
-export const Main =styled.div `
-  display: flex;
-  width: 100%;
-a{
-  text-decoration: none;
-}
-`
+export const Card = styled(motion.div)`
+    position: relative;
+    display: block;
+    width: 45.8vw;
+    margin-right: 1.5vw;
+    background-color: #1d1d1d;
+`;
+export const Main = styled.div`
+    display: flex;
+    width: 100%;
+    a {
+        text-decoration: none;
+    }
+
+`;
 export const ImgPanel = styled.div ` 
   img{
     object-fit: cover;
@@ -58,8 +60,9 @@ export const Padding = styled.div `
   width: 100%;
   padding: 1vw;
 `
-export const TextPanel = styled.div `
+export const TextPanel = styled(motion.div) `
   width: 100%;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
 `
@@ -94,44 +97,62 @@ export const Footer = styled.footer`
   margin-top: 7vw;
 `
 export const FooterData = styled.div `
-        
+width: 100%;
+
+div{
   width: 100%;
+  text-align: center;
+}
+span{
+  width: 5vw;
+  height: 5vw;
   display: flex;
+  justify-content: center;
   align-items: center;
-  div{
-    width: 100%;
-    text-align: center;
-  }
-  ul {
-    list-style-type: none;
-  }
-  li{
-    font-size: 1.2vw;
-    line-height: 1.4vw;
+  border-radius: 100px;
+  float: right;
+  background-color: #1d1d1d;
+}
+ul {
+  list-style-type: none;
+}
+li{
+  font-size: 1.2vw;
+  line-height: 1.4vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+  h3{
+    
+    display: inline-block;
+    margin-bottom: 2vw;
+    font-size: 2vw;
+    line-height: 2vw;
     text-align: center;
     text-transform: uppercase;
   }
-    h3{
-      
-      display: inline-block;
-      margin-bottom: 2vw;
-      font-size: 2vw;
-      line-height: 2vw;
-      text-align: center;
-      text-transform: uppercase;
-    }
-  span{
-    width: 5vw;
-    height: 5vw;
+  @media screen and (min-width: 480px){
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 100px;
-    float: right;
-    background-color: #1d1d1d;
+
+
+  }
+
+
+  @media screen and (max-width: 480px){
+    display:flex;
+
+      h3,ul,li{
+      font-size: 4vw;
+      line-height: 6vw;
+      }
+    span{
+      display:none;
+    }
   }
 `
 export const H =styled.h1 `
   color:#f6f4f1 ;
   font-size: 3vw;
+
 `
