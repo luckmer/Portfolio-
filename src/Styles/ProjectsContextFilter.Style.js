@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 
-export const Grid = styled.article`
+export const Grid = styled(motion.article)`
     padding-top: 8vh;
     width: 100%;
 
