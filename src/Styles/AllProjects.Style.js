@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {motion } from "framer-motion"
 
  export const Header = styled.header `
   font-family: 'Anton', sans-serif;
@@ -22,7 +22,7 @@ import styled from "styled-components";
     font-size: 11px;
   }
 `
-export const Section = styled.section`
+export const Section = styled(motion.section)`
  font-family: 'Anton', sans-serif;
  transition: all linear 0.2s;
  @media screen and (min-width: 1752px){
