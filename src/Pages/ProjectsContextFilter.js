@@ -2,7 +2,6 @@ import React from "react";
 import{Grid, Header, Main, Context,Card, Padding, ImgPanelS, CardR, PaddingTwo, ImgPanel,
     Text,TextContext,HeaderText,DivText
 } from "../Styles/ProjectsContextFilter.Style";
-import { ProjectsContextFilterHook } from "../hooks/ScrollAnimateHook";
 import MoreProjectsTemplate from "../Components/MoreProjectsTemplate"
 import {useSelector} from "react-redux";
 import HeaderData from "../Components/Header"
@@ -11,20 +10,15 @@ import {motion} from "framer-motion";
 
 const ProjectsContextFilter = (props) =>{
     const data = useSelector((state) =>
-        state.data.fetchApi.filter((i) => i.name === props.match.params._id));
-    const {firstImg,secondImg,thirdImg,state } =ProjectsContextFilterHook()
-    window.onbeforeunload = function (){
-        window.scrollTo(0, 0);
-    }
-
-    const Images = data.map(({images})=>images[0])
-
+    state.data.fetchApi.filter((i) => i.name === props.match.params._id));
+    window.onbeforeunload = function () { window.scrollTo(0, 0); };
+    const Images = data.map(({ images }) => images[0]);
     return (
         <Grid exit='exit'
         initial='initial'
         animate='animate'
         >
-            <Header>
+            <Header >
                 <HeaderData data={Images} />
             </Header>
             <TextContext>
@@ -49,10 +43,7 @@ const ProjectsContextFilter = (props) =>{
                             <Padding>
                                     <ImgPanelS Img={Images}>
                                         <motion.div
-                                            ref={firstImg}
                                             whileHover={{scale:.98}}
-                                            style={{ width: 0 }}
-                                            animate={{ width: state.one === true ? "100%"  : "0vw" }}
                                             transition={{
                                                 delay: 0.2,
                                                 x: {
@@ -71,10 +62,9 @@ const ProjectsContextFilter = (props) =>{
                         <CardR>
                             <Padding>
                                 <ImgPanelS Img={Images}>
-                                    <motion.div ref={secondImg}
+                                    <motion.div
                                     whileHover={{scale:0.98,  }}
-                                    style={{ width: "0", borderStartEndRadius:"100vw" }}
-                                    animate={{ width: state.two === true ? "100%"  : "0"   }}
+                                    style={{ width: "100%" }}
                                         transition={{
                                         delay: 0.2,
                                         x: {
@@ -97,10 +87,7 @@ const ProjectsContextFilter = (props) =>{
                         <div>
                             <PaddingTwo >
                                 <motion.img src={Images} alt={Images}
-                                ref ={thirdImg}
                                 whileHover={{ scale: .98  }}
-                                style={{ translateY: "-100%" }}
-                                animate={{ translateY: state.three === true ? "0%"  : "100%" }}
                                 transition={{
                                     delay: 0.2,
                                     x: {
@@ -114,10 +101,7 @@ const ProjectsContextFilter = (props) =>{
                             </PaddingTwo>
                             <PaddingTwo  >
                                 <motion.img src={Images} alt={Images}
-                                ref ={thirdImg}
                                 whileHover={{ scale: .98  }}
-                                style={{ translateX: "-100%" }}
-                                animate={{ translateX: state.three === true ? "0%"  : "-100%" }}
                                 transition={{
                                     delay: 0.2,
                                     x: {
@@ -137,10 +121,7 @@ const ProjectsContextFilter = (props) =>{
                         <PaddingTwo>
                             <ImgPanel >
                                 <motion.img src={Images} alt={Images}
-                                    ref ={thirdImg}
                                     whileHover={{ scale: .98 }}
-                                    style={{ translateY: "100%" }}
-                                    animate={{ translateY: state.three === true ? "0%"  : "100%" }}
                                     transition={{
                                         delay: 0.2,
                                         x: {
