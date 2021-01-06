@@ -1,45 +1,23 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import {Section,Grid,Slider,Header,Space} from "../Styles/AllProjects.Style";
 import {FilterMapOptions} from "../Components/FilterMapOptions";
 import SmoothScrollUpDown from "../hooks/SmoothScrollUpDown";
 import {ParallaxEffect} from "../Components/ParallaxEffect";
 import FilterProjectData from "../hooks/FilterProjectData";
 import {useSelector} from "react-redux";
-
+import { TrueFalseScrollHook} from "../hooks/ScrollAnimateHook"
 const TotalProjects = () => {
     const scroll = useSelector(state => state.data);
     const [openFilter ,setOpenFilter] = useState(false)
     const[dataFilter, setDataFilter ] = useState("")
-    const [ScrollAnimate,setScrollAnimate] =useState({
-        one:false,two:false,three:false,four:false
-    })
+
     const { Tilt, options } = ParallaxEffect();
     const {handleScrollUp } = SmoothScrollUpDown();
     FilterProjectData(dataFilter)
     const { FilterOptions, Map, handleClick } = FilterMapOptions(
-        setOpenFilter, openFilter, setDataFilter, scroll, Tilt, options );
+    setOpenFilter, openFilter, setDataFilter, scroll, Tilt, options );
+    const {ScrollAnimate} = TrueFalseScrollHook()
 
-    
-    useEffect(()=>{
-        const Scroll = () =>{
-            const data = () => document.body.getBoundingClientRect().top
-            const control = data();
-            control >= -1000 ?
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, one: false })) :
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, one: true }));
-            control >= -1750 ?
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, two: false })) :
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, two: true }));
-            control >= -2500 ?
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, three: false })) :
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, three: true }));
-            control >= -3100 ?
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, four: false })) :
-                setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, four: true }));
-        }
-        document.addEventListener("scroll",Scroll)
-        return ()=>document.removeEventListener("scroll",Scroll)
-    },[])
 
     return (
         <>
