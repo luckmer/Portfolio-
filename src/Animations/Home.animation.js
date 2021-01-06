@@ -13,6 +13,9 @@ export const firstName = {
             staggerDirection: 0.5,
         },
     },
+    exit: {
+        y: 0,
+    },
 };
 
 export const firstNameS = {
@@ -27,6 +30,9 @@ export const firstNameS = {
             staggerDirection: 0.5,
         },
     },
+    exit: {
+        y: 0,
+    },
 };
 
 export const letter = {
@@ -37,6 +43,9 @@ export const letter = {
         y: 0,
         transition: { duration: 1, ...transition },
     },
+    exit: {
+        y:400
+    }
 };
 
 export const ButtonLetter = {
@@ -47,4 +56,7 @@ export const ButtonLetter = {
         x: 0,
         transition: { duration: 1, ...transition },
     },
+    exit: {
+        x:400,
+    }
 };
