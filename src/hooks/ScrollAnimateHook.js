@@ -1,64 +1,23 @@
 import {useEffect , useRef,useState} from "react";
 
-export const  ScrollHook = () => {
-    const [state, setState] = useState({
-        a: false, b: false, c: false, d :false,main:false
-    });
-
-
-    const [ScrollValue ,setScrollValue ]  = useState(document.body.getBoundingClientRect().top)
-    const
-        e = useRef(null), f = useRef(null),
-        g = useRef(null), h = useRef(null);
-
-    useEffect(() => {
-        const topPos = e => e.getBoundingClientRect().top;
-
-        const
-            i = Math.abs(topPos(e.current) - 300), j = Math.abs(topPos(f.current) ),
-            k = Math.abs(topPos(g.current)), l = Math.abs(topPos(h.current) );
-
-        const onScroll = () => {
-            setScrollValue(document.body.getBoundingClientRect().top)
-            const a = Math.abs(document.body.getBoundingClientRect().top);
-            if (i < a)
-                setState(state => ({ ...state, a: true }));
-            if (j < a)
-                setState(state => ({ ...state, b: true }));
-            if (k < a)
-                setState(state => ({ ...state, c: true }));
-            if (l < a)
-                setState(state => ({ ...state, d: true }));
-            a >= 300 ?
-                setState(state => ({ ...state, main: true })) :
-                setState(state => ({ ...state, main: false }));
-        };
-
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
-    }, [setState,setScrollValue]);
-
-
-    return { e, f, g, h ,state,ScrollValue};
-}
-
 
 export const ProjectsContextFilterHook = () =>{
     const [state, setState] = useState({
-        one: false, two: false, three: false
+        one: false, two: false, three: false,four:false
     });
 
     const firstImg = useRef();
     const secondImg = useRef();
     const thirdImg = useRef();
-
+    const FourImg = useRef();
     useEffect(() =>{
         const topPos = e => e.getBoundingClientRect().top;
         
         const FirstState = topPos(firstImg.current) - 500;
         const secondState = topPos(secondImg.current) - 300;
-        
         const ThirdState = topPos(thirdImg.current)  ;
+        const FourState = topPos(FourImg.current)  ;
+    
         
         const onScroll = () =>{
             const scroll = Math.abs(document.body.getBoundingClientRect().top);
@@ -72,10 +31,41 @@ export const ProjectsContextFilterHook = () =>{
             if (ThirdState <= scroll) {
                 setState(state => ({...state, three:true}))
             }
+            if (FourState <= scroll) {
+                setState(state => ({...state, three:true}))
+            }
         }
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, [setState])
     
-    return {firstImg,secondImg,thirdImg,state}
+    return {firstImg,secondImg,thirdImg,FourImg,state}
+}
+
+export const TrueFalseScrollHook = () =>{
+    const [ScrollAnimate,setScrollAnimate] =useState({
+        one:false,two:false,three:false,four:false
+    })
+useEffect(()=>{
+    const Scroll = () =>{
+        const data = () => document.body.getBoundingClientRect().top
+        const control = data();
+        control >= -1000 ?
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, one: false })) :
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, one: true }));
+        control >= -1750 ?
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, two: false })) :
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, two: true }));
+        control >= -2500 ?
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, three: false })) :
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, three: true }));
+        control >= -3100 ?
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, four: false })) :
+            setScrollAnimate(ScrollAnimate => ({ ...ScrollAnimate, four: true }));
+    }
+    document.addEventListener("scroll",Scroll)
+    return ()=>document.removeEventListener("scroll",Scroll)
+}, [])
+    
+    return {ScrollAnimate}
 }
