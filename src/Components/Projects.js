@@ -1,6 +1,6 @@
 import React ,{useState} from "react";
 import{Grid,TextControl,ImageDiv,Hr,Div,Span} from "../Styles/Projects.Style";
-import {ScrollHook} from "../hooks/ScrollAnimateHook";
+import {ProjectsContextFilterHook} from "../hooks/ScrollAnimateHook";
 import {useSelector} from "react-redux";
 import {motion } from "framer-motion"
 import {Link } from "react-router-dom"
@@ -9,7 +9,7 @@ import HoverTextView from "../hooks/HoverTextView";
 const Projects = ()=>{
 
     const dataS = useSelector(state => state.data.fetchApi);
-    const { e, f, g, h,state } = ScrollHook();
+    const {firstImg,secondImg,thirdImg,FourImg,state } = ProjectsContextFilterHook();
     const {x,y,pos,list} = HoverTextView()
     const [hover, setHover] = useState(false);
 
@@ -57,17 +57,17 @@ const Projects = ()=>{
         <motion.section exit ="exit"  >
             <Div
                 
-                ref={e} animate={state.a} >
+                ref={firstImg} animate={state.one} >
                 { Mapping[12]}
             </Div>
             <Div
-                ref={f} animate={state.b} >
+                ref={secondImg} animate={state.two} >
                 { Mapping[ 5 ] }
             </Div>
-            <Div ref={g} animate={state.c}>
+            <Div ref={thirdImg} animate={state.three}>
                 { Mapping[ 0 ] }
             </Div>
-            <Div  ref={h} animate={state.d}>
+            <Div  ref={FourImg} animate={state.four}>
                 { Mapping[ 2 ] }
             </Div>
         </motion.section>
