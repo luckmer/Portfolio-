@@ -6,12 +6,11 @@ const HoverTextView = () =>{
 
     const {position } = MouseScrollHook()
     let list = useRef()
-
     const x  = position.x
-const y  = position.y
-const [pos ,setPos ] = useState({
-    top:0,left:0
-})
+    const y  = position.y
+
+    const [pos, setPos] = useState({ top: 0, left: 0 })
+    
 useEffect(()=>{
     const TopPos = (element) => element.getBoundingClientRect().top;
     const LeftPos = (element) => element.getBoundingClientRect().left;

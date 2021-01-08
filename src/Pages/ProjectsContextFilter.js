@@ -13,6 +13,7 @@ const ProjectsContextFilter = (props) =>{
     state.data.fetchApi.filter((i) => i.name === props.match.params._id));
     window.onbeforeunload = function () { window.scrollTo(0, 0); };
     const Images = data.map(({ images }) => images[0]);
+    
     return (
         <Grid exit='exit'
         initial='initial'
