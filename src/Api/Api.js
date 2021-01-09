@@ -1,7 +1,7 @@
 export const fetchApi = [
     {
         _id: 1,
-        numb: 1,
+        numb: "01",
         Start: "03",
         name: "Covid-Tracker",
         filter: "Design",
@@ -30,7 +30,7 @@ export const fetchApi = [
     },
     {
         _id: 3,
-        numb: 3,
+        numb: "03",
         Start: "04",
         name: "School-control",
         filter: "Design",
@@ -45,7 +45,7 @@ export const fetchApi = [
     },
     {
         _id: 4,
-        numb: 4,
+        numb: "04",
         name: "Jump_Game",
         filter: "Games",
         link: "https://github.com/luckmer/Jump_Game",
@@ -59,7 +59,7 @@ export const fetchApi = [
     },
     {
         _id: 5,
-        numb: 5,
+        numb: "05",
         name: "Calendar_JS",
         filter: "Design",
         link: "https://github.com/luckmer/Calendar_JS",
@@ -73,7 +73,7 @@ export const fetchApi = [
     },
     {
         _id: 6,
-        numb: 6,
+        numb: "06",
         Start: "02",
         name: "E-commerce-Shop",
         filter: "Design",
@@ -88,7 +88,7 @@ export const fetchApi = [
     },
     {
         _id: 7,
-        numb: 7,
+        numb: "07",
         name: "Snake_Game",
         filter: "Games",
         link: "https://github.com/luckmer/Snake_Game",
@@ -102,7 +102,7 @@ export const fetchApi = [
     },
     {
         _id: 8,
-        numb: 8,
+        numb: "08",
         name: "pick-an-apple-game",
         filter: "Games",
         link: "https://github.com/luckmer/pick-an-apple-game",
@@ -116,7 +116,7 @@ export const fetchApi = [
     },
     {
         _id: 9,
-        numb: 9,
+        numb: "09",
         name: "Flappy-Bird",
         filter: "Games",
         link: "https://github.com/luckmer/Flappy-Bird",
