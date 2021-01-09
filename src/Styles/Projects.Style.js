@@ -9,26 +9,26 @@ export const Grid = styled(motion.section) `
   }
 
   header{
-   overflow: hidden;
-   line-height: 1.6em;
-   font-size: 6vw;
-   height: 20vh;
-   position: absolute;
+    overflow: hidden;
+    line-height: 1.6em;
+    font-size: 6vw;
+    height: 20vh;
+    position: absolute;
   }
   span{
-   float: left;
-   text-transform: uppercase;
-   font-weight: bold;
-   font-size: 5em;
-   color: #1d1d1d;
+    float: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 5em;
+    color:#2c2724;
   }
- }
- 
- header{
+}
+
+  header{
   font-weight: bold;
   text-transform: uppercase;
-  color: #fff;
- }
+  color: #2c2724;
+}
  @media(max-width: 651px){
   a{
    text-decoration: none;
@@ -69,7 +69,6 @@ export const ImageDiv = styled(motion.div) `
  }
  img{
   object-fit: cover;
-  background-color: grey;
   width: 100%;
   height: 100%;
  }
@@ -81,7 +80,7 @@ export const TextControl = styled.div `
  height: 100%;
  overflow: hidden;
  h1{
-  color: #202020;
+  color: #2c2724;
   font-weight: bold;
   text-transform: uppercase;
  }
@@ -110,7 +109,7 @@ export const TextControl = styled.div `
 export const Hr = styled.hr `
  margin-bottom: 50px;
  height: 1px;
- background-color: #202020;
+ background-color: #2c2724;
  width:100%;
  display: block;
 `

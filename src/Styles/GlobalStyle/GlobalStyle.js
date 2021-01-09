@@ -16,7 +16,7 @@ const Index = createGlobalStyle`
     }
   }
   body{
-    background-color: #eaeaea;
+    background-color: #f6f4f1;
     min-width:100%;
     min-height: 100vh;
     
@@ -52,11 +52,6 @@ const Index = createGlobalStyle`
   }
   ::-webkit-scrollbar{width:2px;height:2px;}
   ::-webkit-scrollbar-button{width:2px;height:2px;}
-
-
-
-
-
 
 
 
