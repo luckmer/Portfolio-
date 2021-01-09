@@ -18,7 +18,8 @@ const Projects = ()=>{
         <Grid
             initial ="initial"
             animate ="animate"
-            key ={_id} state ={name} exit ="exit" >
+            key={_id} state={name}
+            exit="exit" >
             <Link to={`${name}/${_id}`}>
                 <Hr/>
                 <article ref ={list}>
@@ -68,7 +69,7 @@ const Projects = ()=>{
                 { Mapping[ 0 ] }
             </Div>
             <Div  ref={FourImg} animate={state.four}>
-                { Mapping[ 2 ] }
+                { Mapping[ 12 ] }
             </Div>
         </motion.section>
     )

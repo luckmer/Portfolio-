@@ -51,15 +51,17 @@ const TotalProjects = () => {
         const acc = diff / height.height;
         const velo =+ acc
         const skew = velo * 25.5
+        const allImgs = [...document.querySelectorAll('img')];
+        allImgs.forEach(el => el.style.transform = ` skewX(${-skew}deg) `);
     }
 
     
     return (
     <main  data-scroll-container data-horizontal="true"  ref ={scrollRef} >
-        <Section  ref ={style}  >
+        <Section  ref ={style} initial ="initial" exit ="exit " animate ="animate" id ="style" >
             <Galery >
                     {scroll.fetchApi.map(({images,name,numb,_id,filter}) => (
-                        <Card key ={_id}>
+                        <Card key ={name}>
                         <Header  data-scroll data-scroll-speed="1.5">
                             <div>
                                 <Number>{numb}</Number>

@@ -15,7 +15,8 @@ const ProjectsContextFilter = (props) =>{
     const Images = data.map(({ images }) => images[0]);
     
     return (
-        <Grid exit='exit'
+        <Grid
+            exit="exit"
         initial='initial'
         animate='animate'
         >
