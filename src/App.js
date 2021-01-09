@@ -2,7 +2,10 @@ import React,{useEffect} from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import {routes } from "./routes";
 import {NavBar} from "./Export";
-function App() {
+import { AnimatePresence } from "framer-motion";
+import { SwitchPage } from "./Components/NextPanel";
+
+function App(){
     const location = useLocation();
 
     useEffect(() => {
@@ -10,14 +13,15 @@ function App() {
     }, [location.pathname]);
 
     return (
-        <main>
+        <AnimatePresence exitBeforeEnter initial ={false}>
+            <SwitchPage/>
             <NavBar />
             <Switch location={location} key={location.pathname}>
                 {routes.map(({ path, Component }) => (
                     <Route key={path} exact path={path} component={Component} />
                 ))}
             </Switch>
-        </main>
+        </AnimatePresence>
     );
 }
 export default App;
