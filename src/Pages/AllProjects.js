@@ -1,76 +1,97 @@
-import React,{useState} from "react";
-import {Section,Grid,Slider,Header,Space} from "../Styles/AllProjects.Style";
-import {FilterMapOptions} from "../Components/FilterMapOptions";
-import SmoothScrollUpDown from "../hooks/SmoothScrollUpDown";
-import {ParallaxEffect} from "../Components/ParallaxEffect";
-import FilterProjectData from "../hooks/FilterProjectData";
-import {useSelector} from "react-redux";
-import { TrueFalseScrollHook} from "../hooks/ScrollAnimateHook"
+import React, { useEffect,useState,createRef} from "react";
+import locomotiveScroll from "locomotive-scroll";
+import {Section,Galery,Card,Header,Text,Number,Title,Footer} from "../Styles/AllProjects.Style";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const TotalProjects = () => {
     const scroll = useSelector(state => state.data);
-    const [openFilter ,setOpenFilter] = useState(false)
-    const[dataFilter, setDataFilter ] = useState("")
+    const [height, setheight] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight
+    });
+    const scrollRef = createRef();
+    const style = React.useRef()
 
-    const { Tilt, options } = ParallaxEffect();
-    const {handleScrollUp } = SmoothScrollUpDown();
-    FilterProjectData(dataFilter)
-    const { FilterOptions, Map, handleClick } = FilterMapOptions(
-    setOpenFilter, openFilter, setDataFilter, scroll, Tilt, options );
-    const {ScrollAnimate} = TrueFalseScrollHook()
+    useEffect(() => {
+        const Scroll = new locomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+            direction: "horizontal",
+            lerp: 0.06
+        });
+    Scroll.on("scroll", (window) =>{
+        skewScrolling(window)
+    })
+    },[scrollRef]);
 
 
+    useEffect(() => {
+        function Resize() {
+            setheight({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+        }
+        window.addEventListener("resize", Resize);
+        return () => window.removeEventListener("resize", Resize);
+    }, []);
+    const data = {
+        ease: 0.1,
+        current: 0,
+        last: 0,
+        rounded: 0,
+        test:0
+    };
+    
+    const skewScrolling = (Window) =>{
+        data.current = Window.scroll.x
+        data.last += (data.current - data.last) * data.ease
+        data.rounded = Math.round(data.last * 100) / 100
+        const diff = data.current - data.rounded;
+        const acc = diff / height.height;
+        const velo =+ acc
+        const skew = velo * 25.5
+    }
+
+    
     return (
-        <>
-            {openFilter ? FilterOptions :" "}
-            <Section >
-                <Header animate ={scroll.navProjectScroll} >
-                    <h1>WORK</h1>
-                    <h6>Fill free to scroll </h6>
-                </Header>
-                <Space>
-                    <Grid animate ={ScrollAnimate.one}>
-                        {Map[0]}
-                        {Map[1]}
-                        {Map[2]}
-                    </Grid>
-                    <Grid animate ={ScrollAnimate.two}>
-                        {Map[3]}
-                        {Map[4]}
-                        {Map[5]}
-                    </Grid>
-                    <Grid animate ={ScrollAnimate.three}>
-                        {Map[6]}
-                        {Map[7]}
-                        {Map[8]}
-                    </Grid>
-                    <Grid animate ={ScrollAnimate.four}>
-                        {Map[9]}
-                        {Map[10]}
-                        {Map[11]}
-                    </Grid>
-                    <Grid animate ={false}>
-                        {Map[12]}
-                    </Grid>
-                </Space>
-                <Slider>
-                    <div>
-                        <button onClick={handleClick}>
-                            <hr/>
-                            <hr/>
-                            <hr/>
-                        </button>
-                    </div>
-                    <h6>2020 projects have fun </h6>
-                    <div>
-                        <button onClick={handleScrollUp}>
-                            <hr/>
-                        </button>
-                    </div>
-                </Slider>
-            </Section>
-        </>
+    <main  data-scroll-container data-horizontal="true"  ref ={scrollRef} >
+        <Section  ref ={style}  >
+            <Galery >
+                    {scroll.fetchApi.map(({images,name,numb,_id,filter}) => (
+                        <Card key ={_id}>
+                        <Header  data-scroll data-scroll-speed="1.5">
+                            <div>
+                                <Number>{numb}</Number>
+                            </div>
+                            <div>
+                                <Title>{name}</Title>
+                            </div>
+                        </Header>
+                        <div>
+                            <div>
+                                <Link to={`${name}/${_id}`}>
+                                    <img src={images} alt={images} />
+                                </Link>
+                            </div>
+                        </div>
+                        <section>
+                            <Text>
+                                <div/>
+                                <div >  
+                                    <Footer>
+                                        <span>{filter} </span>
+                                    </Footer>
+                                </div>
+                            </Text>
+                        </section>
+                    </Card>
+                ))}
+            </Galery>
+        </Section>
+    </main>
     )
 }
 
-export default TotalProjects;
 
+export default TotalProjects
