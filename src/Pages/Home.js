@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import {Grid, ContactPanel,HeaderStyle,Span,HideText} from "../Styles/Home.style";
 import {disableScroll,enableScroll} from "../hooks/LockScrollAfterAnimation";
 import {firstName,letter} from "../Animations/Home.animation";
@@ -19,7 +19,8 @@ const Home = () =>{
     }, [select]);
 
 
-    return(
+
+    return (
         <>
             <Panels/>
             <Grid
