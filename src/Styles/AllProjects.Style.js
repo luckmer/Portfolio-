@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-export const Section = styled.section`
+import { motion } from "framer-motion"
+export const Section = styled(motion.section)`
 overflow-y: auto;
 overflow-x: hidden;
 justify-content: center;
@@ -14,7 +14,6 @@ justify-content: flex-start;
     height: 100vh;
     justify-content: center;
   }
-
   img{
     object-fit: cover;
     margin: auto;
