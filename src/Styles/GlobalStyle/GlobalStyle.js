@@ -16,7 +16,6 @@ const Index = createGlobalStyle`
     }
   }
   body{
-    //font-family: 'Anton', sans-serif;
     background-color: #eaeaea;
     min-width:100%;
     min-height: 100vh;
@@ -54,7 +53,33 @@ const Index = createGlobalStyle`
   ::-webkit-scrollbar{width:2px;height:2px;}
   ::-webkit-scrollbar-button{width:2px;height:2px;}
 
-  
+
+
+
+
+
+
+
+html.has-scroll-smooth {
+overflow: hidden; }
+
+html.has-scroll-dragging {
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+  user-select: none; 
+  overflow: hidden;
+}
+
+
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+white-space: nowrap;
+height: 100vh;
+display: inline-block;
+  white-space: nowrap; 
+}
+
 `;
 
 export default  Index;
