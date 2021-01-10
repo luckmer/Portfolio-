@@ -1,4 +1,3 @@
-import React from "react";
 import {Grid,SocialContact} from "../Styles/AboutMe.Style";
 
 const AboutMe = ()=>{

@@ -5,14 +5,13 @@ import { transition } from "../Animations/Home.animation";
 
 const Panel = styled(motion.div)`
     height:100vh;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     z-index: 11;
     background-color: #1d1d1d;
 `
 
-export const SwitchPage = () =>
-{
+export const SwitchPage = () =>{
     return (
         <Panel
         transition={{ ...transition, duration: 2, times: [0, .5, 1] }}

@@ -1,4 +1,3 @@
-import React from "react";
 import { Padding, TextPanel } from "../Styles/MoreProjectsTemplate.Style";
 import { Main, Control, CardS, ImgPanel, Text } from "../Styles/CardS";
 import {firstNameS , letter ,ButtonLetter} from "../Animations/Home.animation"
@@ -10,7 +9,8 @@ function HeaderData({ data }){
     return (
         <Main
         initial='initial'
-        animate='animate'
+            animate='animate'
+            exit ="exit"
         >
             <CardS>
                 <Padding>
@@ -19,8 +19,9 @@ function HeaderData({ data }){
                             Img={data}
                             style={{ width: 0 }}
                             animate={{ width: "100%" }}
+                            exit = {{opacity:0}}
                             transition={{
-                                delay: 0.2,
+                                delay: 1.3,
                                 x: {
                                     type: "spring", stiffness: 100,
                                 },

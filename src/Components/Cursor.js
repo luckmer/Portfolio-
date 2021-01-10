@@ -1,16 +1,19 @@
 import {MousePosition} from "../hooks/MousePosition";
 import classNames from "classnames";
-import React from "react";
 
 const Cursor = () =>{
-    const position = MousePosition();
-    const cursor = classNames('cursor',{
-        'clicked': position.click
+    const {position,Hover,click} = MousePosition();
+    console.log(Hover)
+    
+    console.log(position)
+    const cursor = classNames('cursor', {
+        'clicked': click,
+        'TEXT': Hover
     });
 
     return <div className={cursor} style={ {
-        left: position.position.x,
-        top:position.position.y}}
+        left: position.x,
+        top:position.y}}
     >
     </div>
 }

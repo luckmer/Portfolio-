@@ -1,15 +1,24 @@
-import React from 'react'
-import {FilterNextPrevProject} from "../hooks/NextProjectData";
-import {Link} from "react-router-dom"
-import {Article,H,Header,Main,ImgPanel,Padding,Footer,FooterData,Card,Text,TextPanel,Number} from "../Styles/MoreProjectsTemplate.Style";
+import { FilterNextPrevProject } from "../hooks/NextProjectData";
+import { Link } from "react-router-dom";
+import {
+    Article,
+    H,
+    Header,
+    Main,
+    ImgPanel,
+    Padding,
+    Footer,
+    FooterData,
+    Card,
+    Text,
+    TextPanel,
+    Number,
+} from "../Styles/MoreProjectsTemplate.Style";
 
-const  MoreProjectsTemplate = ({props}) =>  {
-
+const MoreProjectsTemplate = ({ props }) => {
     const { NextProjectData, PrevProjectData } = FilterNextPrevProject(props);
 
-    const transition = { duration: .6, ease: [.6, 0.01, -0.05, 0.9] };
-
-
+    const transition = { duration: 0.6, ease: [0.6, 0.01, -0.05, 0.9] };
 
     return (
         <Article>
@@ -24,8 +33,10 @@ const  MoreProjectsTemplate = ({props}) =>  {
             <section>
                 <Main>
                     <Link
-                        to={`/${NextProjectData.name}/${NextProjectData._id}`} >
-                        <Card transition={transition} whileHover={{ scale: 0.98}} >
+                        to={`/${NextProjectData.name}/${NextProjectData._id}`}>
+                        <Card
+                            transition={transition}
+                            whileHover={{ scale: 0.98 }}>
                             <Padding>
                                 <div>
                                     <ImgPanel>
@@ -50,8 +61,10 @@ const  MoreProjectsTemplate = ({props}) =>  {
                         </Card>
                     </Link>
                     <Link
-                        to={`/${PrevProjectData.name}/${PrevProjectData._id}`} >
-                        <Card transition={transition} whileHover={{ scale: 0.98}}  >
+                        to={`/${PrevProjectData.name}/${PrevProjectData._id}`}>
+                        <Card
+                            transition={transition}
+                            whileHover={{ scale: 0.98 }}>
                             <Padding>
                                 <div>
                                     <ImgPanel>
@@ -112,6 +125,6 @@ const  MoreProjectsTemplate = ({props}) =>  {
             </Footer>
         </Article>
     );
-}
+};
 
-export default MoreProjectsTemplate
+export default MoreProjectsTemplate;

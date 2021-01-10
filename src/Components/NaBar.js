@@ -1,4 +1,3 @@
-import React from "react";
 import {Grid , NavBarContext , Hr} from "../Styles/NavBar.Style";
 import {useSelector , useDispatch} from "react-redux";
 import {setNavView } from "../Reducers/DataControl";
@@ -35,7 +34,6 @@ const NavBar = () =>{
                     </Link>
                 </ul>
             </NavBarContext>
-            <Hr/>
         </Grid>
     )
 }
