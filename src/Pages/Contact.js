@@ -1,4 +1,3 @@
-import React from "react";
 import { Article, H1, Email } from "../Styles/Article";
 
 
