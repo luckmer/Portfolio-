@@ -27,14 +27,6 @@ export const NavBarContext = styled.div`
   }
 `
 
-export const Hr = styled.div `
-  width: 100%;
-  max-width: 90vw;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #1d1d1d;
-  height: 0.5px;
-`
 
 export const Grid = styled.header `
   font-family: 'Anton', sans-serif;
@@ -55,9 +47,5 @@ export const Grid = styled.header `
     padding: 5vh 11vw 0 11vw;
   }
   
-  hr{
-    display: block;
-    width: 100%;
-    border: 1px solid #1d1d1d;
-  }
+
 `

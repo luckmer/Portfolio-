@@ -22,23 +22,33 @@ const Index = createGlobalStyle`
     
   }
 
+  .TEXT{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fefefe;
+    background-color: #fefefe;
+    mix-blend-mode: difference;
+    transition: all 150ms ease;
+  }
 
   .cursor {
-    color: black;
-    mix-blend-mode: exclusion;
-    z-index: 99999;
     width: 40px;
-    height:40px;
-    border: 2px solid white;
-    border-radius: 100px;
+    height: 40px;
+    border: 2px solid #fefefe;
+    border-radius: 100%;
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: all 150ms ease;
+    transition-property:  opacity, background-color, transform, mix-blend-mode;
+
   }
 
   .clicked{
     transform: translate(-50%, -50%) scale(0.9);
-    background-color: #fefefe;
+    background-color:#fefefe ;
   }
 
   ::-moz-selection { 
@@ -65,7 +75,6 @@ html.has-scroll-dragging {
   user-select: none; 
   overflow: hidden;
 }
-
 
 
 [data-scroll-direction="horizontal"] [data-scroll-container] {
