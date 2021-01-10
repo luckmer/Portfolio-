@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion"
 export const Section = styled(motion.section)`
+font-family: moret, serif;
+
 overflow-y: auto;
 overflow-x: hidden;
 justify-content: center;
@@ -22,13 +24,15 @@ justify-content: flex-start;
   }
 `
 
-export const Galery = styled.div`
+export const Galery = styled(motion.div)`
 display: flex;
 margin-left: 12vw;
 padding-right: 12vw;
+overflow:hidden;
 `
 
-export const Card = styled.figure`
+export const Card = styled(motion.figure)`
+
 position: relative;
 display: block;
 width: 20vw;
@@ -56,7 +60,6 @@ justify-content: space-between;
 
 export const Number = styled.span`
 color: #d9d0be;
-font-family: moret, serif;
 font-weight: 800;
 font-style: italic;
 align-self: left;
@@ -66,7 +69,6 @@ font-size: clamp(1vw,3vw,3vw);
 
 export const Title = styled.h2`
 color: #2c2724;
-font-family: moret, serif;
 font-weight: 800;
 font-style: italic;
 align-self: center;

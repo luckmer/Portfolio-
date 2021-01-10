@@ -1,10 +1,10 @@
-import React ,{useState} from "react";
+import {useState} from "react";
 import{Grid,TextControl,ImageDiv,Hr,Div,Span} from "../Styles/Projects.Style";
 import {ProjectsContextFilterHook} from "../hooks/ScrollAnimateHook";
-import {useSelector} from "react-redux";
-import {motion } from "framer-motion"
-import {Link } from "react-router-dom"
 import HoverTextView from "../hooks/HoverTextView";
+import {useSelector} from "react-redux";
+import {Link } from "react-router-dom"
+import {motion } from "framer-motion"
 
 const Projects = ()=>{
 
@@ -16,6 +16,8 @@ const Projects = ()=>{
 
     const Mapping = dataS.map(({name ,_id,images,Start})=>(
         <Grid
+            onMouseEnter={()=> setHover(true)}
+            onMouseLeave={() => setHover(false)}
             initial ="initial"
             animate ="animate"
             key={_id} state={name}
@@ -25,8 +27,8 @@ const Projects = ()=>{
                 <article ref ={list}>
                     <header>{Start}</header>
                     <ImageDiv
-                        onMouseEnter={()=> setHover(true)}
-                        onMouseLeave={()=> setHover(false)}>
+                        
+                    >
                         <img
                             src={images[1]} alt ={images[1]} />
                     </ImageDiv>
@@ -57,7 +59,6 @@ const Projects = ()=>{
     return(
         <motion.section exit ="exit"  >
             <Div
-                
                 ref={firstImg} animate={state.one} >
                 { Mapping[12]}
             </Div>

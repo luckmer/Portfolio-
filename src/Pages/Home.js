@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {Grid, ContactPanel,HeaderStyle,Span,HideText} from "../Styles/Home.style";
 import {disableScroll,enableScroll} from "../hooks/LockScrollAfterAnimation";
 import {firstName,letter} from "../Animations/Home.animation";
@@ -14,8 +14,6 @@ const Home = () =>{
     useEffect(() => {
         select === false ? disableScroll() : enableScroll()
     }, [select]);
-
-
 
     return (
         <>
