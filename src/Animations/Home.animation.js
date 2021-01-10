@@ -25,7 +25,7 @@ export const firstNameS = {
     animate: {
         y: 0,
         transition: {
-            delayChildren: 0.4,
+            delayChildren: 1.3,
             staggerChildren: 0.08,
             staggerDirection: 0.5,
         },
@@ -37,14 +37,14 @@ export const firstNameS = {
 
 export const letter = {
     initial: {
-        y: 400,
+        y: 900,
     },
     animate: {
         y: 0,
         transition: { duration: 1, ...transition },
     },
     exit: {
-        y:400
+        y: 900,
     }
 };
 
@@ -57,6 +57,6 @@ export const ButtonLetter = {
         transition: { duration: 1, ...transition },
     },
     exit: {
-        x:400,
+        x: 400,
     }
 };
