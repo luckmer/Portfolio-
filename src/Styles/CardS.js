@@ -74,7 +74,7 @@ export const Control = styled(motion.div)`
         height: 70px;
         font-size: 30px;
         fnt-weight: bold;
-        background-color: #eaeaea;
+        background-color: #f6f4f1;
         border: 1px solid #333;
         border-radius: 100px;
     }
