@@ -13,7 +13,7 @@ function App(){
     }, [location.pathname]);
 
     return (
-        <AnimatePresence exitBeforeEnter initial ={false}>
+        <AnimatePresence exitBeforeEnter >
             <SwitchPage/>
             <NavBar />
             <Switch location={location} key={location.pathname}>
